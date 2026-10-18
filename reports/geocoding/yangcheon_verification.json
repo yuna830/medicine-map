@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-10-17T15:58:56+09:00",
+  "total_records": 6,
+  "address_verified": 6,
+  "manual_review": 0,
+  "coordinate_duplicate_groups": 0,
+  "source_reference_year": 2020,
+  "operation_verified": false,
+  "description": "주소 표기 정규화와 도로명, 건물번호 및 좌표 범위에 대한 기본 검증 결과. 현장 확인이나 시설 운영 검증은 아님."
+}

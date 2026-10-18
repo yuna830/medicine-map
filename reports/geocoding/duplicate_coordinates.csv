@@ -1,0 +1,7 @@
+﻿record_number,district,facility_name,road_address,latitude,longitude,coordinate_available,coordinate_valid,coordinate_quality,coordinate_source,coordinate_validation_status,issues,requires_manual_review,coordinate_key
+134,서초구,서초구청,서울특별시 서초구 남부순환로 2584,37.4836248649,127.032683002,True,True,VALID_COORDINATE,,,,False,"37.4836249,127.032683"
+136,서초구,서초구 보건소,서울특별시 서초구 남부순환로 2584,37.4836248649,127.032683002,True,True,VALID_COORDINATE,,,,False,"37.4836249,127.032683"
+193,중구,서울역센트럴자이,서울특별시 중구 만리재로 175,37.55382801,126.9640273,True,True,VALID_COORDINATE,,,,False,"37.553828,126.9640273"
+202,중구,중림동 주민센터,서울특별시 중구 만리재로 175,37.55382801,126.9640273,True,True,VALID_COORDINATE,,,,False,"37.553828,126.9640273"
+194,중구,한진해모로아파트(임대동),"서울특별시 중구 왕십리로39길 30, 104동 (신당동, 한진해모로)",37.56372841,127.0257107,True,True,VALID_COORDINATE,,,,False,"37.5637284,127.0257107"
+195,중구,한진해모로아파트(일반분양동),"서울특별시 중구 왕십리로39길 30, 104동 (신당동, 한진해모로)",37.56372841,127.0257107,True,True,VALID_COORDINATE,,,,False,"37.5637284,127.0257107"

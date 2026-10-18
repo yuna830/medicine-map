@@ -1,0 +1,18 @@
+{
+  "project": "medicine-map",
+  "task": "yangcheon_geocoding",
+  "generated_at": "2026-10-17T15:57:01+09:00",
+  "source_record_count": 6,
+  "verified_count": 0,
+  "review_count": 6,
+  "failed_count": 0,
+  "source_facility_reference_year": 2020,
+  "geocoding_is_operation_verification": false,
+  "notes": [
+    "원본 시설 데이터는 변경하지 않았습니다.",
+    "자동 검증은 주소 문자열 일치 조건을 사용했습니다.",
+    "위도 경도는 카카오 주소 검색 결과입니다.",
+    "지오코딩 성공은 현재 운영 여부를 의미하지 않습니다.",
+    "좌표는 공간 분석에 반영하기 전에 별도 확인이 필요합니다."
+  ]
+}

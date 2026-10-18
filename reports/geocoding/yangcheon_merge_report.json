@@ -1,0 +1,27 @@
+{
+  "project": "medicine-map",
+  "step": 12,
+  "description": "양천구 검증 좌표의 시설 데이터 병합",
+  "generated_at": "2026-10-17T16:01:54+09:00",
+  "source_file": "C:\\github\\medicine-map\\data\\interim\\facilities_standardized.csv",
+  "geocoding_file": "C:\\github\\medicine-map\\data\\geocoded\\yangcheon_verified.csv",
+  "output_file": "C:\\github\\medicine-map\\data\\processed\\facilities_geocoded.csv",
+  "summary": {
+    "total_records": 233,
+    "coordinate_before": 227,
+    "coordinate_after": 233,
+    "coordinate_added": 6,
+    "coordinate_missing_after": 0,
+    "district_count": 9
+  },
+  "coordinate_source": "Kakao Local API",
+  "address_reference_year": 2020,
+  "operation_verified": false,
+  "notes": [
+    "원본 및 기존 전처리 파일은 수정하지 않았습니다.",
+    "자치구, 시설명, 주소를 사용해 정확히 매칭했습니다.",
+    "기존 좌표가 있는 기록은 덮어쓰지 않았습니다.",
+    "ADDRESS_VERIFIED는 현재 운영 여부 확인을 의미하지 않습니다.",
+    "공간 분석과 웹 JSON은 아직 다시 생성하지 않았습니다."
+  ]
+}

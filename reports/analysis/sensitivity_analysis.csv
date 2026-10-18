@@ -1,0 +1,3 @@
+﻿scenario,district_count,total_facility_records,total_population,unweighted_mean_rate,pooled_population_rate,median_rate,std_rate
+all_9_districts,9,233,3565408,0.7890780579475069,0.6535016469363394,0.5436676312648427,0.6297836365947279
+exclude_yangcheon,8,227,3140843,0.8700476755774585,0.7227359024312899,0.7476526999323014,0.6211719045345685

@@ -1,0 +1,124 @@
+{
+  "generated_at": "2026-10-17T16:08:01+09:00",
+  "source_file": "C:\\github\\medicine-map\\data\\processed\\facilities_geocoded.csv",
+  "method": "haversine",
+  "earth_radius_km": 6371.0088,
+  "scope": "전체 9개 자치구의 233개 기록 중 가장 가까운 다른 시설 검색",
+  "total_records": 233,
+  "district_count": 9,
+  "coordinate_records": 233,
+  "missing_coordinates": 0,
+  "mean_nearest_km": 0.45801686118822427,
+  "mean_nearest_m": 458.01686118822425,
+  "median_nearest_km": 0.40266716857688883,
+  "median_nearest_m": 402.66716857688886,
+  "max_nearest_km": 2.803911225084162,
+  "max_nearest_m": 2803.9112250841617,
+  "nearest_over_1km_records": 9,
+  "same_coordinate_records": 6,
+  "mean_distinct_nearest_km": 0.46611105918463713,
+  "mean_distinct_nearest_m": 466.11105918463716,
+  "distinct_nearest_over_1km_records": 9,
+  "nearest_other_district_records": 1,
+  "districts": [
+    {
+      "district": "양천구",
+      "facility_records": 6,
+      "mean_nearest_km": 0.9662861519402832,
+      "mean_nearest_m": 966.2861519402833,
+      "median_nearest_m": 881.9892263599836,
+      "max_nearest_m": 1270.390776729318,
+      "mean_distinct_nearest_m": 966.2861519402833,
+      "same_coordinate_records": 0
+    },
+    {
+      "district": "관악구",
+      "facility_records": 21,
+      "mean_nearest_km": 0.6408297310282255,
+      "mean_nearest_m": 640.8297310282255,
+      "median_nearest_m": 609.8428368264654,
+      "max_nearest_m": 1086.0560135810854,
+      "mean_distinct_nearest_m": 640.8297310282255,
+      "same_coordinate_records": 0
+    },
+    {
+      "district": "구로구",
+      "facility_records": 22,
+      "mean_nearest_km": 0.6118801056660913,
+      "mean_nearest_m": 611.8801056660913,
+      "median_nearest_m": 613.152219338836,
+      "max_nearest_m": 1818.4396196178593,
+      "mean_distinct_nearest_m": 611.8801056660913,
+      "same_coordinate_records": 0
+    },
+    {
+      "district": "강동구",
+      "facility_records": 21,
+      "mean_nearest_km": 0.5766289721635387,
+      "mean_nearest_m": 576.6289721635387,
+      "median_nearest_m": 473.9569073554464,
+      "max_nearest_m": 1131.2690376797393,
+      "mean_distinct_nearest_m": 576.6289721635387,
+      "same_coordinate_records": 0
+    },
+    {
+      "district": "서초구",
+      "facility_records": 41,
+      "mean_nearest_km": 0.4623366735896187,
+      "mean_nearest_m": 462.3366735896187,
+      "median_nearest_m": 374.2888184470627,
+      "max_nearest_m": 2803.9112250841617,
+      "mean_distinct_nearest_m": 478.10035624232535,
+      "same_coordinate_records": 2
+    },
+    {
+      "district": "중랑구",
+      "facility_records": 16,
+      "mean_nearest_km": 0.4511073105662283,
+      "mean_nearest_m": 451.1073105662283,
+      "median_nearest_m": 415.8083067490934,
+      "max_nearest_m": 822.1901125291928,
+      "mean_distinct_nearest_m": 451.1073105662283,
+      "same_coordinate_records": 0
+    },
+    {
+      "district": "성북구",
+      "facility_records": 42,
+      "mean_nearest_km": 0.37860669100784783,
+      "mean_nearest_m": 378.6066910078478,
+      "median_nearest_m": 314.71373399592255,
+      "max_nearest_m": 1004.180151670784,
+      "mean_distinct_nearest_m": 378.6066910078478,
+      "same_coordinate_records": 0
+    },
+    {
+      "district": "마포구",
+      "facility_records": 35,
+      "mean_nearest_km": 0.32081616619955217,
+      "mean_nearest_m": 320.8161661995522,
+      "median_nearest_m": 285.2739128084112,
+      "max_nearest_m": 910.1230727573248,
+      "mean_distinct_nearest_m": 320.8161661995522,
+      "same_coordinate_records": 0
+    },
+    {
+      "district": "중구",
+      "facility_records": 29,
+      "mean_nearest_km": 0.29616031820639793,
+      "mean_nearest_m": 296.16031820639796,
+      "median_nearest_m": 278.57118001485793,
+      "max_nearest_m": 577.2758457846776,
+      "mean_distinct_nearest_m": 338.90642663409585,
+      "same_coordinate_records": 4
+    }
+  ],
+  "cautions": [
+    "가장 가까운 다른 시설 기록까지의 직선거리입니다.",
+    "주민의 실제 이동거리 또는 시설 접근시간이 아닙니다.",
+    "동일 좌표의 다른 시설 기록은 거리 0으로 집계됩니다.",
+    "자치구 경계를 넘어 가까운 시설을 찾을 수 있습니다.",
+    "시설 자료의 기준일은 자치구마다 다릅니다.",
+    "양천구 6건은 2020년 주소를 지오코딩한 기록입니다.",
+    "시설의 현재 운영 여부는 검증하지 않았습니다."
+  ]
+}

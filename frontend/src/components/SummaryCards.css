@@ -1,0 +1,402 @@
+
+/* ==========================================
+   1. 카드 및 툴팁
+========================================== */
+
+.summary-card-wrap {
+  position: relative;
+  min-width: 0;
+}
+
+.interactive-metric {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.interactive-metric:hover {
+  border-color: #a5b7eb;
+  box-shadow: 0 4px 15px rgba(50, 80, 150, 0.08);
+  transform: translateY(-1px);
+}
+
+.interactive-metric:focus-visible {
+  outline: 2px solid #4f67d9;
+  outline-offset: 2px;
+}
+
+.metric-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  width: 100%;
+}
+
+.metric-card-top > span {
+  color: #75849a;
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.metric-card-top svg {
+  flex-shrink: 0;
+  color: #9baac0;
+}
+
+.interactive-metric:hover .metric-card-top svg {
+  color: #4f67d9;
+}
+
+.metric-tooltip {
+  position: absolute;
+  z-index: 50;
+
+  left: 50%;
+  bottom: calc(100% + 9px);
+
+  width: max-content;
+  max-width: min(260px, 90vw);
+
+  padding: 10px 13px;
+  border-radius: 8px;
+
+  background: #26354d;
+  color: #ffffff;
+
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: left;
+
+  box-shadow: 0 6px 18px rgba(20, 35, 60, 0.16);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 5px);
+
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease,
+    visibility 0.15s ease;
+}
+
+.metric-tooltip::after {
+  content: "";
+  position: absolute;
+
+  top: 100%;
+  left: 50%;
+
+  border: 6px solid transparent;
+  border-top-color: #26354d;
+  transform: translateX(-50%);
+}
+
+.metric-tooltip > span {
+  display: block;
+}
+
+.metric-tooltip small {
+  display: block;
+  margin-top: 3px;
+
+  color: #b8c6dd;
+  font-size: 10px;
+}
+
+.summary-card-wrap:hover .metric-tooltip,
+.summary-card-wrap:focus-within .metric-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+
+/* ==========================================
+   2. 팝업 배경
+========================================== */
+
+.summary-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.38);
+  backdrop-filter: blur(3px);
+}
+
+
+/* ==========================================
+   3. 팝업 본문
+========================================== */
+
+.summary-modal {
+  width: min(100%, 460px);
+  max-height: min(85vh, 650px);
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+  border: 1px solid #e5eaf2;
+  border-radius: 15px;
+
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.18);
+
+  overflow: hidden;
+  animation: summary-modal-in 0.18s ease-out;
+}
+
+@keyframes summary-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.summary-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 20px 23px 16px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.summary-modal-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.summary-modal-icon {
+  display: grid;
+  place-items: center;
+
+  width: 34px;
+  height: 34px;
+
+  color: #4f67d9;
+  background: #eef3ff;
+  border-radius: 9px;
+}
+
+.summary-modal-heading h2 {
+  margin: 0;
+  color: #24344d;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.summary-modal-close {
+  display: grid;
+  place-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
+  border: none;
+  border-radius: 7px;
+
+  color: #718096;
+  background: #f3f5f8;
+  cursor: pointer;
+}
+
+.summary-modal-close:hover {
+  background: #e8edf4;
+}
+
+.summary-modal-body {
+  padding: 22px 24px;
+  overflow-y: auto;
+}
+
+.summary-modal-number {
+  color: #1d2c45;
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.summary-modal-number small {
+  margin-left: 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.summary-modal-body > p {
+  margin: 12px 0 0;
+  color: #607087;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.summary-modal-divider {
+  height: 1px;
+  margin: 21px 0;
+  background: #edf0f5;
+}
+
+
+/* ==========================================
+   4. 좌표 보유 비율
+========================================== */
+
+.summary-coverage {
+  margin-top: 20px;
+}
+
+.summary-coverage-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 9px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.summary-coverage-label strong {
+  color: #3657cb;
+  font-size: 14px;
+}
+
+.summary-coverage-track {
+  width: 100%;
+  height: 8px;
+
+  background: #e9edf5;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.summary-coverage-fill {
+  height: 100%;
+  background: #5574dc;
+  border-radius: 99px;
+}
+
+
+/* ==========================================
+   5. 데이터 안내 목록
+========================================== */
+
+.summary-modal-notes h3 {
+  margin: 0 0 13px;
+  color: #34445d;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.summary-modal-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  margin-top: 11px;
+
+  color: #697a91;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.summary-modal-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #7891c8;
+}
+
+
+/* ==========================================
+   6. 팝업 하단 버튼
+========================================== */
+
+.summary-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 14px 23px;
+  border-top: 1px solid #edf0f5;
+}
+
+.summary-modal-footer button {
+  min-width: 75px;
+  height: 36px;
+
+  padding: 0 16px;
+
+  color: #ffffff;
+  background: #4f67d9;
+
+  border: none;
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.summary-modal-footer button:hover {
+  background: #3d57c6;
+}
+
+
+/* ==========================================
+   7. 모바일
+========================================== */
+
+@media (hover: none) {
+  .metric-tooltip {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .summary-modal {
+    max-height: 85vh;
+  }
+
+  .summary-modal-header {
+    padding: 16px;
+  }
+
+  .summary-modal-body {
+    padding: 18px;
+  }
+
+  .summary-modal-footer {
+    padding: 12px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-metric,
+  .metric-tooltip,
+  .summary-modal {
+    transition: none;
+    animation: none;
+  }
+}

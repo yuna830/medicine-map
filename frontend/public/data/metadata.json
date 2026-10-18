@@ -1,0 +1,39 @@
+{
+  "project": "medicine-map",
+  "coverage": {
+    "city": "서울특별시",
+    "districts": [
+      "마포구",
+      "양천구",
+      "구로구",
+      "관악구",
+      "중구",
+      "강동구",
+      "서초구",
+      "성북구",
+      "중랑구"
+    ],
+    "district_count": 9,
+    "not_seoul_wide": true
+  },
+  "records": {
+    "facility_count": 233,
+    "map_marker_count": 233,
+    "missing_coordinate_count": 0,
+    "monthly_volume_records": 108
+  },
+  "periods": {
+    "population": "2026-Q2",
+    "flow_population": "2026-Q2",
+    "collection_volume": "2024",
+    "facility_reference_dates_vary": true
+  },
+  "limitations": [
+    "서울시 전체가 아닌 9개 자치구를 대상으로 분석했습니다.",
+    "시설 자료의 기준일은 자치구별로 다르며, 현재 운영 여부는 확인되지 않았습니다.",
+    "양천구 6건은 2020년 공개 자료의 주소를 기반으로 좌표를 보완했습니다.",
+    "시설 간 거리는 직선거리 기준으로 실제 이동거리와 다를 수 있습니다.",
+    "2024년 수거 처리량은 공식 측정 단위 확인이 필요합니다.",
+    "서로 다른 기준 시점의 자료를 직접 비교하여 운영 효율로 해석하기는 어렵습니다."
+  ]
+}

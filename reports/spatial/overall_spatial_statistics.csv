@@ -1,0 +1,4 @@
+﻿metric,label,count,mean_km,median_km,std_km,min_km,max_km
+nearest_distance_km,전체 최근접 시설 직선거리,227,0.4446,0.3989,0.3136,0.0,2.8039
+nearest_same_district_km,동일 자치구 내 최근접 직선거리,227,0.4459,0.3989,0.3157,0.0,2.8039
+nearest_distinct_km,서로 다른 좌표의 최근접 직선거리,227,0.4529,0.401,0.3069,0.0138,2.8039

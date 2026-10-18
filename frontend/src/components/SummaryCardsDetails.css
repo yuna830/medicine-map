@@ -1,0 +1,207 @@
+
+/* ==========================================
+   상세 팝업 2열 레이아웃 복구
+========================================== */
+
+.summary-detail-table {
+  margin-top: 16px;
+  padding: 4px 15px;
+  background: #f7f9fc;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+}
+
+.summary-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  min-height: 40px;
+  padding: 9px 0;
+  border-bottom: 1px solid #e8edf4;
+}
+
+.summary-detail-row:last-child {
+  border-bottom: none;
+}
+
+.summary-detail-row > span {
+  color: #738299;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.summary-detail-row > strong {
+  color: #293b55;
+  font-size: 12px;
+  font-weight: 750;
+  text-align: right;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   오른쪽 분석 결과
+========================================== */
+
+.summary-insight-section {
+  padding-bottom: 13px;
+  margin-bottom: 13px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.summary-insight-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.summary-modal-notes .summary-insight-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 9px;
+  color: #34445d;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.summary-insight-section h3 svg {
+  color: #657bd2;
+  flex-shrink: 0;
+}
+
+.summary-findings,
+.summary-cautions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-finding,
+.summary-caution {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.finding-dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  margin-top: 6px;
+  background: #667ce0;
+  border-radius: 50%;
+}
+
+.summary-finding p,
+.summary-interpretation {
+  margin: 0;
+  color: #53637b;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.summary-caution {
+  color: #78869a;
+  font-size: 10.5px;
+  line-height: 1.65;
+}
+
+.summary-caution svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #91a0b5;
+}
+
+/* ==========================================
+   PC: 왼쪽 통계 + 오른쪽 분석
+========================================== */
+
+@media (min-width: 769px) {
+  .summary-modal {
+    width: min(800px, calc(100vw - 48px));
+    max-height: min(90vh, 800px);
+  }
+
+  .summary-modal-body {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 0.95fr)
+      minmax(0, 1.05fr);
+    grid-template-rows: auto auto auto 1fr;
+    column-gap: 28px;
+    align-content: start;
+    padding: 23px 27px;
+  }
+
+  .summary-modal-number {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .summary-modal-body > p {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 10px 0 14px;
+  }
+
+  .summary-coverage {
+    grid-column: 1;
+    grid-row: 3;
+    margin: 0 0 14px;
+  }
+
+  .summary-detail-table {
+    grid-column: 1;
+    grid-row: 4;
+    align-self: start;
+    margin-top: 0;
+  }
+
+  .summary-modal-divider {
+    display: none;
+  }
+
+  .summary-modal-notes {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    align-self: start;
+
+    padding: 3px 0 3px 24px;
+    border-left: 1px solid #e7ecf3;
+  }
+
+  .summary-modal-header {
+    padding: 18px 27px;
+  }
+
+  .summary-modal-footer {
+    padding: 13px 27px;
+  }
+}
+
+/* ==========================================
+   모바일: 세로 배치
+========================================== */
+
+@media (max-width: 768px) {
+  .summary-modal {
+    width: min(460px, calc(100vw - 24px));
+    max-height: 85dvh;
+  }
+
+  .summary-modal-body {
+    display: block;
+    padding: 18px;
+  }
+
+  .summary-modal-divider {
+    display: block;
+  }
+
+  .summary-modal-notes {
+    margin-top: 16px;
+    padding: 0;
+    border-left: none;
+  }
+}

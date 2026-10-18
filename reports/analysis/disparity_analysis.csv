@@ -1,0 +1,3 @@
+﻿scenario,highest_district,highest_value,lowest_district,lowest_value,absolute_gap,max_min_ratio
+all_9_districts,중구,2.2688332720487563,양천구,0.14132111690789398,2.1275121551408622,16.054453302456334
+exclude_yangcheon,중구,2.2688332720487563,강동구,0.4168147020469572,1.852018570001799,5.443265942651792

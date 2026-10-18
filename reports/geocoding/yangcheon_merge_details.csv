@@ -1,0 +1,7 @@
+﻿facility_name,district,original_address,latitude,longitude,match_status,coordinate_source,address_validation_status,operation_verified
+양천구보건소,양천구,서울특별시 양천구 목동서로 339(신정동),37.5177061613231,126.865739424322,MATCHED,Kakao Local API,ADDRESS_VERIFIED,False
+신월보건지소,양천구,서울특별시 양천구 남부순환로 407(신월동),37.5313370565341,126.8318232775,MATCHED,Kakao Local API,ADDRESS_VERIFIED,False
+목동보건지소,양천구,서울특별시 양천구 목동중앙본로7가길 11(목동),37.5401026639051,126.866976853432,MATCHED,Kakao Local API,ADDRESS_VERIFIED,False
+메디힐병원,양천구,서울특별시 양천구 남부순환로 331(신월동),37.5372613394638,126.827841386792,MATCHED,Kakao Local API,ADDRESS_VERIFIED,False
+목동힘찬병원,양천구,서울특별시 양천구 신목로 120(목동),37.5249809740677,126.876846570165,MATCHED,Kakao Local API,ADDRESS_VERIFIED,False
+포미즈여성병원,양천구,서울특별시 양천구 공항대로 610(목동),37.546789059764,126.87235841377,MATCHED,Kakao Local API,ADDRESS_VERIFIED,False

@@ -1,0 +1,715 @@
+
+/* ==========================================
+   1. 자치구 선택
+========================================== */
+
+.analysis-region-select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+
+  background: #f0f3f9;
+  border: 1px solid #e4eaf3;
+  border-radius: 7px;
+}
+
+.analysis-region-select select {
+  appearance: none;
+  height: 100%;
+  min-width: 118px;
+  padding: 0 29px 0 11px;
+
+  color: #61718a;
+  background: transparent;
+  border: none;
+  outline: none;
+
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.analysis-region-select > svg {
+  position: absolute;
+  right: 9px;
+  color: #8594a8;
+  pointer-events: none;
+}
+
+.analysis-region-select:focus-within {
+  outline: 2px solid #a2b2ee;
+  outline-offset: 2px;
+}
+
+.analysis-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================
+   2. 그래프 3열 배치
+========================================== */
+
+.analysis-dashboard-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(0, 1.15fr)
+    minmax(0, 0.8fr);
+
+  align-items: stretch;
+  gap: 12px;
+}
+
+.analysis-dashboard-grid .dashboard-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 350px;
+  padding: 16px;
+
+  background: #ffffff;
+  border: 1px solid #e1e7ef;
+  border-radius: 11px;
+  overflow: visible;
+}
+
+.analysis-dashboard-grid .dashboard-card-header {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+
+  min-height: 48px;
+  flex-shrink: 0;
+}
+
+.analysis-dashboard-grid .dashboard-card-header h3 {
+  margin: 0;
+  color: #26344b;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.analysis-dashboard-grid .dashboard-card-header p {
+  margin: 5px 0 0;
+  color: #8a98aa;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.analysis-dashboard-grid .dashboard-card-header > svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #94a3b8;
+}
+
+.analysis-chart-area {
+  position: relative;
+  flex: 1;
+
+  width: 100%;
+  min-width: 0;
+  height: 252px;
+  min-height: 252px;
+}
+
+.analysis-dashboard-grid .dashboard-card-footer {
+  flex-shrink: 0;
+  margin-top: 9px;
+  color: #94a3b8;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   3. 그래프 아이콘
+========================================== */
+
+.analysis-metric-menu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.analysis-chart-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+
+  height: 28px;
+  padding: 0 6px;
+
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 7px;
+
+  color: #90a1bc;
+  cursor: pointer;
+}
+
+.analysis-chart-icon:hover,
+.analysis-chart-icon.active {
+  color: #4264ca;
+  background: #edf2ff;
+  border-color: #dce5ff;
+}
+
+.analysis-chart-icon:focus-visible {
+  outline: 2px solid #5473dd;
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   4. 지표 선택 드롭다운
+========================================== */
+
+.analysis-metric-dropdown {
+  position: absolute;
+  top: calc(100% + 7px);
+  right: 0;
+  z-index: 31;
+
+  width: 165px;
+  padding: 5px;
+
+  background: #ffffff;
+  border: 1px solid #e0e7f0;
+  border-radius: 9px;
+
+  box-shadow: 0 7px 24px rgba(20, 35, 65, 0.13);
+}
+
+.analysis-metric-dropdown button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  width: 100%;
+  padding: 10px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: transparent;
+  color: #64748b;
+
+  text-align: left;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.analysis-metric-dropdown button:hover {
+  background: #f3f6fd;
+}
+
+.analysis-metric-dropdown button.selected {
+  background: #edf3ff;
+  color: #4262c5;
+  font-weight: 750;
+}
+
+.analysis-metric-dropdown button:focus-visible {
+  outline: 2px solid #6380dd;
+  outline-offset: -2px;
+}
+
+/* ==========================================
+   5. 산점도 툴팁
+========================================== */
+
+.analysis-scatter-tooltip {
+  width: 195px;
+  padding: 12px;
+
+  background: #ffffff;
+  border: 1px solid #dfe6f0;
+  border-radius: 9px;
+
+  box-shadow: 0 6px 18px rgba(30, 45, 70, 0.12);
+  font-size: 11px;
+}
+
+.analysis-scatter-tooltip > strong {
+  display: block;
+  margin-bottom: 9px;
+
+  color: #26344b;
+  font-size: 12px;
+}
+
+.analysis-scatter-tooltip > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 5px 0;
+}
+
+.analysis-scatter-tooltip span {
+  color: #8290a4;
+  white-space: nowrap;
+}
+
+.analysis-scatter-tooltip b {
+  color: #35465e;
+  text-align: right;
+  font-weight: 750;
+}
+
+/* ==========================================
+   6. 산점도 상관계수 표시
+========================================== */
+
+.analysis-correlation-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.analysis-correlation-footer strong {
+  color: #506bd5;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* ==========================================
+   7. 하단 분석 결과
+========================================== */
+
+.analysis-insight-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.analysis-metric-insight {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  min-width: 0;
+  padding: 12px 14px;
+
+  background: #edf3ff;
+  border: 1px solid #e1eafb;
+  border-radius: 9px;
+}
+
+.analysis-metric-insight > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #5471d1;
+}
+
+.analysis-metric-insight > div {
+  min-width: 0;
+}
+
+.analysis-metric-insight strong {
+  display: block;
+  margin-bottom: 5px;
+
+  color: #405d9f;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.analysis-metric-insight p {
+  margin: 0;
+  color: #61749a;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   8. 데이터 안내
+========================================== */
+
+.analysis-source-note,
+.analysis-distance-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  margin-top: 9px;
+  padding: 7px 2px;
+
+  color: #8492a7;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.analysis-source-note svg,
+.analysis-distance-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.analysis-distance-note {
+  color: #a0783a;
+}
+
+/* ==========================================
+   9. 데이터 없음
+========================================== */
+
+.analysis-empty-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  color: #8997aa;
+  text-align: center;
+  font-size: 11px;
+}
+
+/* ==========================================
+   10. 월별 상세 팝업 배경
+========================================== */
+
+.analysis-monthly-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.38);
+  backdrop-filter: blur(3px);
+}
+
+/* ==========================================
+   11. 월별 상세 팝업
+========================================== */
+
+.analysis-monthly-modal {
+  display: flex;
+  flex-direction: column;
+
+  width: min(800px, calc(100vw - 48px));
+  max-height: min(90vh, 800px);
+
+  background: #ffffff;
+  border: 1px solid #e5eaf2;
+  border-radius: 15px;
+  overflow: hidden;
+
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.18);
+}
+
+.analysis-monthly-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 18px 27px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.analysis-monthly-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.analysis-monthly-icon {
+  display: grid;
+  place-items: center;
+
+  width: 34px;
+  height: 34px;
+
+  background: #eef3ff;
+  color: #4f67d9;
+  border-radius: 9px;
+}
+
+.analysis-monthly-heading h2 {
+  margin: 0;
+
+  color: #24344d;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.analysis-monthly-heading p {
+  margin: 4px 0 0;
+  color: #8b98ad;
+  font-size: 11px;
+}
+
+.analysis-monthly-close {
+  display: grid;
+  place-items: center;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  border: none;
+  border-radius: 7px;
+
+  color: #718096;
+  background: #f3f5f8;
+  cursor: pointer;
+}
+
+.analysis-monthly-close:hover {
+  background: #e8edf4;
+}
+
+/* ==========================================
+   12. 월별 팝업 본문 2열
+========================================== */
+
+.analysis-monthly-body {
+  padding: 23px 27px;
+  overflow-y: auto;
+}
+
+.analysis-monthly-columns {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
+  gap: 28px;
+}
+
+.analysis-monthly-left,
+.analysis-monthly-right {
+  min-width: 0;
+}
+
+.analysis-monthly-right {
+  padding-left: 24px;
+  border-left: 1px solid #e7ecf3;
+}
+
+.analysis-monthly-label {
+  color: #8491a5;
+  font-size: 11px;
+}
+
+.analysis-monthly-total {
+  margin-top: 7px;
+
+  color: #24344d;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.analysis-monthly-description {
+  margin: 10px 0 15px;
+
+  color: #697a91;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.analysis-monthly-table {
+  padding: 4px 15px;
+
+  background: #f7f9fc;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+}
+
+.analysis-monthly-table > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  min-height: 40px;
+  padding: 9px 0;
+
+  border-bottom: 1px solid #e8edf4;
+}
+
+.analysis-monthly-table > div:last-child {
+  border-bottom: none;
+}
+
+.analysis-monthly-table span {
+  color: #738299;
+  font-size: 12px;
+}
+
+.analysis-monthly-table strong {
+  color: #293b55;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.analysis-monthly-right h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 3px 0 12px;
+
+  color: #34445d;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.analysis-monthly-right h3:not(:first-child) {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #edf0f5;
+}
+
+.analysis-monthly-right h3 svg {
+  color: #657bd2;
+}
+
+.analysis-monthly-right p {
+  margin: 0 0 10px;
+
+  color: #697a91;
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.analysis-monthly-right p strong {
+  color: #405d9f;
+  font-weight: 750;
+}
+
+.analysis-monthly-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 13px 27px;
+  border-top: 1px solid #edf0f5;
+}
+
+.analysis-monthly-actions button {
+  min-width: 75px;
+  height: 36px;
+  padding: 0 16px;
+
+  color: #ffffff;
+  background: #4f67d9;
+  border: none;
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.analysis-monthly-actions button:hover {
+  background: #3d57c6;
+}
+
+/* ==========================================
+   13. 중간 화면
+========================================== */
+
+@media (max-width: 1150px) {
+  .analysis-dashboard-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .analysis-dashboard-grid
+  .dashboard-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ==========================================
+   14. 모바일
+========================================== */
+
+@media (max-width: 760px) {
+  .analysis-dashboard-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .analysis-dashboard-grid
+  .dashboard-card:last-child {
+    grid-column: auto;
+  }
+
+  .analysis-dashboard-grid .dashboard-card {
+    min-height: 330px;
+    padding: 14px;
+  }
+
+  .analysis-chart-area {
+    min-height: 245px;
+    height: 245px;
+  }
+
+  .analysis-insight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-monthly-modal {
+    width: min(460px, calc(100vw - 24px));
+    max-height: 85dvh;
+  }
+
+  .analysis-monthly-columns {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .analysis-monthly-right {
+    padding-left: 0;
+    padding-top: 18px;
+
+    border-left: none;
+    border-top: 1px solid #e7ecf3;
+  }
+
+  .analysis-monthly-header {
+    padding: 16px;
+  }
+
+  .analysis-monthly-body {
+    padding: 18px;
+  }
+
+  .analysis-monthly-actions {
+    padding: 12px 16px;
+  }
+
+  .analysis-metric-dropdown {
+    width: 160px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .analysis-chart-icon,
+  .analysis-monthly-actions button {
+    transition: none;
+  }
+}

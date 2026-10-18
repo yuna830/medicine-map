@@ -1,0 +1,1097 @@
+/* ==========================================
+   1. 기본 레이아웃
+========================================== */
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: #f7f9fc;
+  color: #18243a;
+}
+
+.compact-main {
+  width: min(100% - 48px, 1440px);
+  margin: 0 auto;
+  padding: 22px 0 30px;
+}
+
+#finder,
+#analysis,
+#top {
+  scroll-margin-top: 76px;
+}
+
+
+/* ==========================================
+   2. 상단 헤더
+========================================== */
+
+.compact-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 58px;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid #e7ebf1;
+  backdrop-filter: blur(12px);
+}
+
+.compact-header-inner {
+  width: min(100% - 48px, 1440px);
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.compact-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #1f2b40;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+
+  width: 32px;
+  height: 32px;
+
+  color: #ffffff;
+  background: #4f67d9;
+  border-radius: 9px;
+}
+
+.compact-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.compact-nav a {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.compact-nav a:hover {
+  color: #3657cb;
+}
+
+
+/* ==========================================
+   3. 대시보드 소개
+========================================== */
+
+.dashboard-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  margin-bottom: 16px;
+}
+
+.dashboard-heading h1 {
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.dashboard-heading p {
+  margin: 5px 0 0;
+  color: #8190a5;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.coverage-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+
+  padding: 8px 12px;
+  border: 1px solid #dce7fa;
+  border-radius: 8px;
+
+  color: #3f63a8;
+  background: #eef5ff;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+
+/* ==========================================
+   4. 상단 핵심 통계 카드
+========================================== */
+
+.compact-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.metric-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  min-height: 88px;
+
+  padding: 14px 20px;
+
+  background: #ffffff;
+  border: 1px solid #e3e9f1;
+  border-radius: 11px;
+}
+
+.metric-card>span {
+  color: #75849a;
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.metric-card strong {
+  display: block;
+  margin-top: 6px;
+
+  color: #24334f;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.metric-card strong small {
+  margin-left: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* ==========================================
+   5. 섹션 제목
+========================================== */
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.section-title-row h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.section-title-row p {
+  margin: 4px 0 0;
+  color: #8290a3;
+  font-size: 12px;
+}
+
+.result-indicator {
+  color: #64748b;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.result-divider {
+  padding: 0 6px;
+  color: #cbd5e1;
+}
+
+
+/* ==========================================
+   6. 시설 검색
+========================================== */
+
+.main-finder {
+  margin-bottom: 30px;
+}
+
+.compact-filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 175px;
+  gap: 10px;
+
+  margin-bottom: 12px;
+}
+
+.compact-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  height: 42px;
+  padding: 0 13px;
+
+  background: #ffffff;
+  border: 1px solid #dfe6ef;
+  border-radius: 9px;
+  color: #8794a6;
+}
+
+.compact-search:focus-within {
+  border-color: #607ce4;
+  box-shadow: 0 0 0 3px rgba(79, 103, 217, 0.08);
+}
+
+.compact-search input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+
+  border: none;
+  outline: none;
+  background: transparent;
+
+  color: #223249;
+  font-size: 13px;
+}
+
+.compact-search input::placeholder {
+  color: #9aa6b6;
+}
+
+.compact-search button {
+  display: grid;
+  place-items: center;
+
+  width: 25px;
+  height: 25px;
+
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+}
+
+.compact-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  height: 42px;
+  border: 1px solid #dfe6ef;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.compact-select select {
+  appearance: none;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 35px 0 13px;
+
+  outline: none;
+  border: none;
+  background: transparent;
+
+  color: #334155;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.compact-select svg {
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+  color: #718096;
+}
+
+
+/* ==========================================
+   7. 시설 목록 + 지도
+========================================== */
+
+.compact-finder-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.7fr);
+  gap: 12px;
+  height: 440px;
+}
+
+.compact-list-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+
+  background: #ffffff;
+  border: 1px solid #e0e7ef;
+  border-radius: 11px;
+  overflow: hidden;
+}
+
+.compact-panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+
+  height: 45px;
+  padding: 0 15px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.compact-panel-heading strong {
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.compact-panel-heading span {
+  color: #91a0b1;
+  font-size: 12px;
+}
+
+.compact-list-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.compact-facility {
+  display: block;
+  width: 100%;
+  padding: 12px 15px;
+
+  border: 0;
+  border-bottom: 1px solid #eef1f5;
+
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.compact-facility:hover {
+  background: #f7f9ff;
+}
+
+.compact-facility.active {
+  background: #eef3ff;
+  box-shadow: inset 3px 0 0 #4f67d9;
+}
+
+.compact-facility-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.compact-facility-main strong {
+  color: #26364e;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.small-district-tag {
+  flex-shrink: 0;
+  padding: 3px 7px;
+
+  background: #eff4ff;
+  border-radius: 5px;
+
+  color: #4366ad;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.compact-address {
+  display: block;
+  margin-top: 5px;
+
+  color: #718197;
+  font-size: 11px;
+  line-height: 1.5;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.compact-facility-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 6px;
+
+  color: #9aa6b6;
+  font-size: 10px;
+}
+
+.coordinate-warning {
+  color: #b7791f;
+  font-weight: 700;
+}
+
+.compact-map-panel {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+
+  background: #f1f4f8;
+  border: 1px solid #e0e7ef;
+  border-radius: 11px;
+  overflow: hidden;
+}
+
+.map-container,
+.kakao-map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-container {
+  position: relative;
+  min-height: 100%;
+}
+
+.kakao-map {
+  position: absolute;
+  inset: 0;
+}
+
+.map-fallback,
+.map-loading,
+.map-empty {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 20px;
+
+  color: #687992;
+  background: #f4f7fb;
+  text-align: center;
+  font-size: 13px;
+}
+
+.map-fallback {
+  color: #9b6b1a;
+  background: #fffbeb;
+}
+
+.map-fallback p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+
+/* ==========================================
+   8. 지도 위 시설 상세 패널
+========================================== */
+
+.compact-detail {
+  position: absolute;
+  z-index: 10;
+  bottom: 12px;
+  left: 12px;
+
+  width: min(370px, calc(100% - 24px));
+  max-height: calc(100% - 24px);
+  overflow-y: auto;
+
+  padding: 15px;
+
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid #e1e7ef;
+  border-radius: 11px;
+
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.14);
+}
+
+.compact-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.detail-eyebrow {
+  display: block;
+  margin-bottom: 5px;
+  color: #5470c5;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.compact-detail h3 {
+  margin: 0;
+  color: #25344d;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.icon-button {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 27px;
+  height: 27px;
+
+  padding: 0;
+  border: 0;
+  border-radius: 7px;
+
+  background: #f1f4f8;
+  color: #718096;
+}
+
+.detail-address {
+  margin: 8px 0;
+  color: #63738a;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.detail-meta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  margin-bottom: 8px;
+
+  color: #8593a6;
+  font-size: 10px;
+}
+
+.nearest-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+
+  margin: 9px 0;
+  color: #536885;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.nearest-info svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.detail-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  padding-top: 10px;
+  border-top: 1px solid #edf0f4;
+}
+
+.detail-footer span,
+.detail-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+}
+
+.detail-footer span {
+  color: #af781e;
+}
+
+.detail-footer a {
+  color: #4265cb;
+  text-decoration: none;
+  font-weight: 750;
+}
+
+.inline-data-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 9px;
+
+  color: #8794a6;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.inline-data-note svg {
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   지도 전체 보기 버튼
+========================================== */
+
+.map-reset-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 5;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 9px 12px;
+
+  border: 1px solid #e0e7ef;
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.97);
+  color: #334155;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  box-shadow: 0 2px 9px rgba(15, 23, 42, 0.1);
+  cursor: pointer;
+}
+
+.map-reset-button:hover {
+  background: #eff5ff;
+  color: #3657c9;
+}
+
+.map-reset-button:focus-visible {
+  outline: 2px solid #4f67d9;
+  outline-offset: 2px;
+}
+
+
+/* ==========================================
+   9. 분석 대시보드
+========================================== */
+
+.compact-analysis {
+  margin-bottom: 20px;
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.15fr) minmax(235px, 0.8fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+.dashboard-card {
+  min-width: 0;
+  min-height: 340px;
+
+  padding: 16px;
+
+  background: #ffffff;
+  border: 1px solid #e1e7ef;
+  border-radius: 11px;
+}
+
+.dashboard-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+
+  min-height: 47px;
+}
+
+.dashboard-card-header h3 {
+  margin: 0;
+  color: #26344b;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.dashboard-card-header p {
+  margin: 5px 0 0;
+  color: #8a98aa;
+  font-size: 11px;
+}
+
+.dashboard-card-header svg {
+  color: #8fa0ba;
+}
+
+.compact-chart {
+  width: 100%;
+  min-width: 0;
+}
+
+.dashboard-card-footer {
+  margin-top: 8px;
+  color: #94a3b8;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.district-table-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.compact-table-wrap {
+  flex: 1;
+  min-height: 0;
+  overflow-x: auto;
+}
+
+.compact-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.compact-table th {
+  padding: 9px 6px;
+  background: #f6f8fc;
+  color: #7c8da4;
+  text-align: left;
+  font-size: 10px;
+}
+
+.compact-table td {
+  padding: 8px 6px;
+  border-bottom: 1px solid #eef1f5;
+  color: #3d4d63;
+}
+
+.compact-table th:not(:first-child),
+.compact-table td:not(:first-child) {
+  text-align: right;
+}
+
+.compact-table tbody tr {
+  cursor: pointer;
+}
+
+.compact-table tbody tr:hover td {
+  background: #f6f9ff;
+}
+
+.compact-table tbody tr.active-row td {
+  background: #edf3ff;
+  color: #2b53b8;
+  font-weight: 750;
+}
+
+.analysis-insight {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+
+  margin-top: 11px;
+  padding: 11px 14px;
+
+  background: #edf3fa;
+  border-radius: 8px;
+
+  color: #728298;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.analysis-insight svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+
+/* ==========================================
+   10. 접을 수 있는 데이터 안내
+========================================== */
+
+.compact-data-info {
+  background: #ffffff;
+  border: 1px solid #e1e7ef;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.data-info-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  min-height: 46px;
+
+  padding: 0 15px;
+  background: transparent;
+  border: none;
+
+  color: #52657f;
+  text-align: left;
+  cursor: pointer;
+}
+
+.data-info-toggle>span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.data-info-toggle>svg {
+  transition: transform 0.2s ease;
+}
+
+.data-info-toggle>svg.rotated {
+  transform: rotate(90deg);
+}
+
+.data-info-content {
+  padding: 12px 18px 17px;
+  border-top: 1px solid #edf0f4;
+
+  color: #6b7a90;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.data-info-content p {
+  margin: 0 0 10px;
+}
+
+.data-info-content ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.data-info-content li {
+  margin: 4px 0;
+}
+
+
+/* ==========================================
+   11. 푸터
+========================================== */
+
+.compact-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  min-height: 55px;
+  margin-top: 25px;
+  padding: 12px max(24px, calc((100% - 1440px) / 2));
+
+  border-top: 1px solid #e4e9f0;
+  background: #ffffff;
+
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.compact-footer>span:last-child {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+/* ==========================================
+   12. 로딩 및 오류
+========================================== */
+
+.status-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+
+  min-height: 100vh;
+  padding: 28px;
+
+  color: #73839a;
+  text-align: center;
+}
+
+.status-page h2 {
+  margin: 0;
+  color: #26364d;
+  font-size: 18px;
+}
+
+.status-page p {
+  margin: 0;
+  font-size: 13px;
+}
+
+
+/* ==========================================
+   13. 반응형
+========================================== */
+
+@media (max-width: 1150px) {
+  .analysis-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .district-table-card {
+    grid-column: 1 / -1;
+  }
+
+  .compact-finder-grid {
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.5fr);
+  }
+}
+
+@media (max-width: 760px) {
+
+  .compact-header-inner,
+  .compact-main {
+    width: min(100% - 28px, 1440px);
+  }
+
+  .compact-header {
+    height: 55px;
+  }
+
+  .compact-brand {
+    font-size: 13px;
+  }
+
+  .compact-nav {
+    gap: 12px;
+  }
+
+  .compact-nav a {
+    font-size: 11px;
+  }
+
+  .dashboard-heading {
+    align-items: flex-start;
+  }
+
+  .dashboard-heading h1 {
+    font-size: 21px;
+  }
+
+  .dashboard-heading p {
+    font-size: 11px;
+  }
+
+  .coverage-label {
+    display: none;
+  }
+
+  .compact-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .metric-card {
+    min-height: 74px;
+    padding: 12px 14px;
+  }
+
+  .metric-card strong {
+    font-size: 22px;
+  }
+
+  .compact-finder-grid {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .compact-map-panel {
+    order: 1;
+    height: 360px;
+    min-height: 360px;
+  }
+
+  .compact-list-panel {
+    order: 2;
+    height: 270px;
+    min-height: 270px;
+  }
+
+  .analysis-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dashboard-card {
+    min-height: 0;
+  }
+
+  .district-table-card {
+    grid-column: auto;
+  }
+
+  .compact-footer {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .compact-brand>span:last-child {
+    max-width: 138px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .compact-nav a {
+    font-size: 10px;
+  }
+
+  .compact-filters {
+    grid-template-columns: minmax(0, 1fr) 122px;
+    gap: 7px;
+  }
+
+  .compact-search,
+  .compact-select {
+    height: 39px;
+  }
+
+  .compact-select select {
+    font-size: 11px;
+  }
+
+  .compact-detail {
+    width: calc(100% - 20px);
+    left: 10px;
+    bottom: 10px;
+  }
+
+  .inline-data-note {
+    align-items: flex-start;
+  }
+}

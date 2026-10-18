@@ -1,0 +1,27 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# React / Node.js
+node_modules/
+dist/
+*.local
+
+# 환경변수 및 API 키
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# 임시 파일
+*.log
+*.bak
+*.tmp
+
+# 백업
+backups/

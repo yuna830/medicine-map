@@ -1,0 +1,27 @@
+{
+  "validation_passed": true,
+  "generated_at": "2026-10-17T16:05:56+09:00",
+  "total_records": 233,
+  "district_count": 9,
+  "coordinate_available": 233,
+  "coordinate_valid": 233,
+  "coordinate_missing": 0,
+  "coordinate_coverage_pct": 100.0,
+  "coordinate_preservation": {
+    "preserved_coordinates": 227,
+    "added_yangcheon_coordinates": 6,
+    "unexpected_changes": 0
+  },
+  "duplicate_coordinate_record_count": 6,
+  "duplicate_coordinate_group_count": 3,
+  "manual_review_records": 0,
+  "address_geocoded_yangcheon_records": 6,
+  "facility_operation_verified": false,
+  "notes": [
+    "좌표 범위 검사는 정확한 자치구 경계 검사가 아닙니다.",
+    "동일 좌표 기록은 자동 삭제하지 않았습니다.",
+    "양천구 자료는 2020년 자료에 지오코딩 좌표를 추가했습니다.",
+    "주소 검증은 시설의 현재 운영 여부 검증이 아닙니다.",
+    "공간 분석은 시설 간 직선거리 기준입니다."
+  ]
+}

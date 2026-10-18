@@ -1,0 +1,8 @@
+﻿variable,variable_label,target,district_count,pearson_r,spearman_r
+population_total,주민등록 총인구,facilities_per_10000,9,-0.8673201914221873,-0.5
+population_65_plus,65세 이상 주민등록인구,facilities_per_10000,9,-0.9135851390842605,-0.6666666666666667
+resident_senior_pct,65세 이상 주민등록인구 비율,facilities_per_10000,9,0.026581096983476476,-0.09999999999999999
+flow_total,길단위 유동인구,facilities_per_10000,9,-0.3863865405967374,-0.016666666666666666
+flow_age_60_plus,60세 이상 유동인구,facilities_per_10000,9,-0.5923156849529282,-0.26666666666666666
+flow_age_60_plus_pct,60세 이상 유동인구 비율,facilities_per_10000,9,-0.34979327979040464,-0.6
+facility_records,시설 기록 수,facilities_per_10000,9,0.5470205112980355,0.8535639569308374

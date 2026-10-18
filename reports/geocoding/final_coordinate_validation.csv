@@ -1,0 +1,234 @@
+﻿record_number,district,facility_name,road_address,latitude,longitude,coordinate_available,coordinate_valid,coordinate_quality,coordinate_source,coordinate_validation_status,issues,requires_manual_review
+1,강동구,둔촌1동 주민센터,서울특별시 강동구 양재대로84길 31,37.52348222,127.136692,True,True,VALID_COORDINATE,,,,False
+2,강동구,국민건강보험공단 강동지사,서울특별시 강동구 천호대로 1102,37.535058,127.133583,True,True,VALID_COORDINATE,,,,False
+3,강동구,강동보건소,서울특별시 강동구 성내로 45,37.529254,127.125563,True,True,VALID_COORDINATE,,,,False
+4,강동구,천호3동 주민센터,서울특별시 강동구 진황도로 23길 7,37.53992761,127.1297726,True,True,VALID_COORDINATE,,,,False
+5,강동구,천호2동 주민센터,서울특별시 강동구 올림픽로80길 60,37.54240857,127.1283202,True,True,VALID_COORDINATE,,,,False
+6,강동구,천호1동 주민센터,서울특별시 강동구 구천면로42길 59,37.54500381,127.1368198,True,True,VALID_COORDINATE,,,,False
+7,강동구,암사3동 주민센터,서울특별시 강동구 고덕로 137,37.55499636,127.1407841,True,True,VALID_COORDINATE,,,,False
+8,강동구,암사2동 주민센터,서울특별시 강동구 상암로3길 28,37.5517063,127.1272709,True,True,VALID_COORDINATE,,,,False
+9,강동구,암사1동 주민센터,서울특별시 강동구 올림픽로98가길 57,37.5514791,127.1326396,True,True,VALID_COORDINATE,,,,False
+10,강동구,성내3동 주민센터,서울특별시 강동구 강동대로53길 76,37.52604217,127.1328839,True,True,VALID_COORDINATE,,,,False
+11,강동구,성내2동 주민센터,"서울특별시 강동구 천호대로 1050, 2층",37.536018,127.128155,True,True,VALID_COORDINATE,,,,False
+12,강동구,성내1동 주민센터,서울특별시 강동구 성내로 13,37.53047772,127.122458,True,True,VALID_COORDINATE,,,,False
+13,강동구,상일2동 주민센터,서울특별시 강동구 고덕로 98길 71,37.55516429,127.1797587,True,True,VALID_COORDINATE,,,,False
+14,강동구,상일1동 주민센터,서울특별시 강동구 구천면로 633,37.55058303,127.1683006,True,True,VALID_COORDINATE,,,,False
+15,강동구,명일2동 주민센터,서울특별시 강동구 상암로 260,37.5463638,127.1513524,True,True,VALID_COORDINATE,,,,False
+16,강동구,명일1동 주민센터,서울특별시 강동구 양재대로 1634,37.55126175,127.1443451,True,True,VALID_COORDINATE,,,,False
+17,강동구,둔촌2동 주민센터,서울특별시 강동구 천호대로186길 7,37.53334613,127.1419485,True,True,VALID_COORDINATE,,,,False
+18,강동구,길동 주민센터,서울특별시 강동구 천호대로 1183,37.53456231,127.1426858,True,True,VALID_COORDINATE,,,,False
+19,강동구,고덕2동 주민센터,서울특별시 강동구 아리수로78길 43-12,37.56050657,127.1643563,True,True,VALID_COORDINATE,,,,False
+20,강동구,고덕1동 주민센터,서울특별시 강동구 양재대로156길 123,37.55727133,127.1515218,True,True,VALID_COORDINATE,,,,False
+21,강동구,강일동 주민센터,서울특별시 강동구 아리수로93길 9-14,37.56504103,127.1739072,True,True,VALID_COORDINATE,,,,False
+22,관악구,보라매동주민센터,서울특별시 관악구 봉천로 279-8,37.48817576,126.932778,True,True,VALID_COORDINATE,,,,False
+23,관악구,은천동주민센터,서울특별시 관악구 봉천로33나길 30,37.48530456,126.9424095,True,True,VALID_COORDINATE,,,,False
+24,관악구,성현동주민센터,서울특별시 관악구 구암길 38,37.48952989,126.9481596,True,True,VALID_COORDINATE,,,,False
+25,관악구,중앙동주민센터,서울특별시 관악구 양녕로6다길 7,37.48419282,126.9497511,True,True,VALID_COORDINATE,,,,False
+26,관악구,청림동주민센터,서울특별시 관악구 관악로 40길 39,37.49184717,126.9586277,True,True,VALID_COORDINATE,,,,False
+27,관악구,행운동주민센터,서울특별시 관악구 행운1길 43,37.48064257,126.9570309,True,True,VALID_COORDINATE,,,,False
+28,관악구,청룡동주민센터,서울특별시 관악구 쑥고개로 44,37.4791175,126.9416407,True,True,VALID_COORDINATE,,,,False
+29,관악구,낙성대동주민센터,서울특별시 관악구 낙성대로4가길 5,37.47629595,126.9583876,True,True,VALID_COORDINATE,,,,False
+30,관악구,인헌동주민센터,서울특별시 관악구 남부순환로246가길 20,37.47509931,126.9653243,True,True,VALID_COORDINATE,,,,False
+31,관악구,남현동주민센터,서울특별시 관악구 남현1가길 29,37.47468786,126.9778753,True,True,VALID_COORDINATE,,,,False
+32,관악구,신림동주민센터,서울특별시 관악구 신림동길 14,37.487396,126.9271139,True,True,VALID_COORDINATE,,,,False
+33,관악구,신사동주민센터,서울특별시 관악구 조원로 142,37.48540905,126.9180954,True,True,VALID_COORDINATE,,,,False
+34,관악구,조원동주민센터,서울특별시 관악구 조원로12길 25,37.48256328,126.9077947,True,True,VALID_COORDINATE,,,,False
+35,관악구,미성동주민센터,서울특별시 관악구 난곡로 249,37.47617498,126.9155517,True,True,VALID_COORDINATE,,,,False
+36,관악구,난곡동주민센터,서울특별시 관악구 난곡로30길 40,37.47102189,126.9216418,True,True,VALID_COORDINATE,,,,False
+37,관악구,난향동주민센터,서울특별시 관악구 난곡로 67,37.46151944,126.9187965,True,True,VALID_COORDINATE,,,,False
+38,관악구,서원동주민센터,서울특별시 관악구 신림로 282,37.47976918,126.9313747,True,True,VALID_COORDINATE,,,,False
+39,관악구,신원동주민센터,서울특별시 관악구 신원로3길 13,37.4816131,126.9274129,True,True,VALID_COORDINATE,,,,False
+40,관악구,서림동주민센터,서울특별시 관악구 신림로29길 6,37.47499588,126.9349996,True,True,VALID_COORDINATE,,,,False
+41,관악구,삼성동주민센터,서울특별시 관악구 호암로 589,37.4701073,126.9329623,True,True,VALID_COORDINATE,,,,False
+42,관악구,대학동주민센터,서울특별시 관악구 신림로 111,37.47059604,126.9369573,True,True,VALID_COORDINATE,,,,False
+43,구로구,신도림동주민센터,서울특별시 구로구 신도림로 40,37.507756,126.8805903,True,True,VALID_COORDINATE,,,,False
+44,구로구,구로제1동주민센터,서울특별시 구로구 구일로4길 57,37.4930394,126.8757882588,True,True,VALID_COORDINATE,,,,False
+45,구로구,구로2동주민센터,서울특별시 구로구 구로동로 141,37.491301,126.8833119,True,True,VALID_COORDINATE,,,,False
+46,구로구,구로3동주민센터,서울특별시 구로구 디지털로31길 109,37.487347042,126.8903243,True,True,VALID_COORDINATE,,,,False
+47,구로구,구로4동주민센터,서울특별시 구로구 구로동로28길 94,37.4915957,126.8891502,True,True,VALID_COORDINATE,,,,False
+48,구로구,구로5동주민센터,서울특별시 구로구 구로중앙로28길 66,37.5001031096,126.8893198,True,True,VALID_COORDINATE,,,,False
+49,구로구,가리봉동주민센터,서울특별시 구로구 우마2길 35,37.4825577,126.8897180831,True,True,VALID_COORDINATE,,,,False
+50,구로구,고척제1동주민센터,서울특별시 구로구 중앙로3길 18-8,37.5004049,126.8627872,True,True,VALID_COORDINATE,,,,False
+51,구로구,고척2동주민센터,서울특별시 구로구 중앙로15길 22,37.5066920781,126.8586052612,True,True,VALID_COORDINATE,,,,False
+52,구로구,개봉1동 주민센터,서울특별시 구로구 경인로33길 51,37.5002412611,126.8511387915,True,True,VALID_COORDINATE,,,,False
+53,구로구,개봉2동주민센터,서울특별시 구로구 개봉로16가길 17,37.4908237,126.8565837,True,True,VALID_COORDINATE,,,,False
+54,구로구,개봉3동주민센터,서울특별시 구로구 개봉로3길 47-5,37.4859938,126.8538368,True,True,VALID_COORDINATE,,,,False
+55,구로구,오류1동주민센터,서울특별시 구로구 경인로27길 7,37.4970232,126.8450907759,True,True,VALID_COORDINATE,,,,False
+56,구로구,오류2동주민센터,서울특별시 구로구 오류로 45,37.4888135366,126.8395046,True,True,VALID_COORDINATE,,,,False
+57,구로구,수궁동주민센터,서울특별시 구로구 오리로15길 32,37.493841,126.8314904,True,True,VALID_COORDINATE,,,,False
+58,구로구,항동주민센터,서울특별시 구로구 연동로 191-19,37.479166,126.8223952625,True,True,VALID_COORDINATE,,,,False
+59,구로구,구로종합복지관,서울특별시 구로구 디지털로 31길 93,37.4868735,126.8908274369,True,True,VALID_COORDINATE,,,,False
+60,구로구,궁동종합사회복지관,서울특별시 구로구 오리로22길 5,37.4991345923,126.8295642119,True,True,VALID_COORDINATE,,,,False
+61,구로구,화원종합사회복지관,서울특별시 구로구 벚꽃로 484,37.4973397,126.8801476,True,True,VALID_COORDINATE,,,,False
+62,구로구,온수어르신복지관,서울특별시 구로구 부일로9길 111,37.4966919,126.8232512,True,True,VALID_COORDINATE,,,,False
+63,구로구,천왕연지타운2단지,서울특별시 구로구 오리로 1102-10,37.4840144134,126.8433413251,True,True,VALID_COORDINATE,,,,False
+64,구로구,신도림동아1차,서울특별시 구로구 신도림로 87,37.5109603819,126.8822390952,True,True,VALID_COORDINATE,,,,False
+65,마포구,마포 보건소,서울특별시 마포구 월드컵로 212 1층,37.566446,126.901932,True,True,VALID_COORDINATE,,,,False
+66,마포구,마포구시설관리공단,"서울특별시 마포구 마포대로11길 44-81, 2층",37.552355,126.951381,True,True,VALID_COORDINATE,,,,False
+67,마포구,보건소 서강지소,"서울특별시 마포구 독막로 165, 3층",37.547783,126.931937,True,True,VALID_COORDINATE,,,,False
+68,마포구,보건소 아현지소,서울특별시 마포구 마포대로11길 44-81,37.552163,126.9513,True,True,VALID_COORDINATE,,,,False
+69,마포구,공덕동 주민센터,서울특별시 마포구 만리재옛길 84,37.550408,126.96009,True,True,VALID_COORDINATE,,,,False
+70,마포구,아현동 주민센터,서울특별시 마포구 마포대로7길 18,37.547245,126.952168,True,True,VALID_COORDINATE,,,,False
+71,마포구,도화동 주민센터,서울특별시 마포구 도화길 37,37.541721,126.949912,True,True,VALID_COORDINATE,,,,False
+72,마포구,용강동 주민센터,서울특별시 마포구 토정로31길 31,37.542495,126.942738,True,True,VALID_COORDINATE,,,,False
+73,마포구,대흥동 주민센터,서울특별시 마포구 신촌로26길 10,37.556046,126.942166,True,True,VALID_COORDINATE,,,,False
+74,마포구,염리동 주민센터,서울특별시 마포구 숭문길 14,37.547266,126.945677,True,True,VALID_COORDINATE,,,,False
+75,마포구,신수동 주민센터,서울특별시 마포구 독막로 192,37.547277,126.935205,True,True,VALID_COORDINATE,,,,False
+76,마포구,서강동 주민센터,서울특별시 마포구 독막로 165,37.547864,126.932055,True,True,VALID_COORDINATE,,,,False
+77,마포구,서교동 주민센터,서울특별시 마포구 동교로15길 7,37.555331,126.914617,True,True,VALID_COORDINATE,,,,False
+78,마포구,합정동 주민센터,서울특별시 마포구 월드컵로5길 11,37.551206,126.911919,True,True,VALID_COORDINATE,,,,False
+79,마포구,망원1동 주민센터,서울특별시 마포구 포은로6길 10,37.555776,126.905903,True,True,VALID_COORDINATE,,,,False
+80,마포구,망원2동 주민센터,서울특별시 마포구 방울내로7길 11,37.560561,126.902255,True,True,VALID_COORDINATE,,,,False
+81,마포구,연남동 주민센터,서울특별시 마포구 성미산로29길 17-9,37.564634,126.922021,True,True,VALID_COORDINATE,,,,False
+82,마포구,성산1동 주민센터,서울특별시 마포구 성산로4길 15,37.563547,126.907912,True,True,VALID_COORDINATE,,,,False
+83,마포구,성산2동 주민센터,서울특별시 마포구 월드컵북로30길 22,37.568915,126.90904,True,True,VALID_COORDINATE,,,,False
+84,마포구,상암동 주민센터,서울특별시 마포구 매봉산로2길 16,37.578494,126.894655,True,True,VALID_COORDINATE,,,,False
+85,마포구,서강 쌍용 예가 아파트,서울특별시 마포구 독막로 145,37.548515,126.92945,True,True,VALID_COORDINATE,,,,False
+86,마포구,상암월드컵파크 9단지 아파트,서울특별시 마포구 월드컵북로 501,37.583606,126.878756,True,True,VALID_COORDINATE,,,,False
+87,마포구,상수 두산 위브 아파트,서울특별시 마포구 독막로18길 5,37.547128,126.924308,True,True,VALID_COORDINATE,,,,False
+88,마포구,망원 성원 2차 아파트,서울특별시 마포구 망원로4길 8,37.556408,126.901434,True,True,VALID_COORDINATE,,,,False
+89,마포구,망원 2차 대림 아파트,서울특별시 마포구 망원로1길 27,37.557342,126.899324,True,True,VALID_COORDINATE,,,,False
+90,마포구,래미안 밤섬 리베뉴 2차 아파트,서울특별시 마포구 독막로20나길 21,37.54676,126.92718,True,True,VALID_COORDINATE,,,,False
+91,마포구,마포한강 아이파크 아파트,서울특별시 마포구 희우정로 77,37.552781,126.903199,True,True,VALID_COORDINATE,,,,False
+92,마포구,상암 월드컵파크 4단지 아파트,서울특별시 마포구 상암산로1길 24,37.577882,126.888743,True,True,VALID_COORDINATE,,,,False
+93,마포구,월드컵 아이파크 1차 아파트,서울특별시 마포구 모래내로9길 6,37.567684,126.914442,True,True,VALID_COORDINATE,,,,False
+94,마포구,월드컵 아이파크 2차 아파트,서울특별시 마포구 모래내로9길 3,37.567147,126.913231,True,True,VALID_COORDINATE,,,,False
+95,마포구,신공덕래미안2차,서울특별시 마포구 만리재로 74,37.547243,126.9582,True,True,VALID_COORDINATE,,,,False
+96,마포구,마포요양병원,"서울특별시 마포구 성산로 128, 지하1~지상5층",37.56394,126.90844,True,True,VALID_COORDINATE,,,,False
+97,마포구,에스엠씨요양병원,"서울특별시 마포구 월드컵북로 165, 지하1층~5층 (성산동, SMC)",37.567054,126.909865,True,True,VALID_COORDINATE,,,,False
+98,마포구,푸르메재단 넥슨어린이재활병원,"서울특별시 마포구 월드컵북로 494, 지하1층~7층",37.584866,126.880573,True,True,VALID_COORDINATE,,,,False
+99,마포구,공덕SK리더스뷰,서울특별시 마포구 백범로31길 7,37.545262,126.9487,True,True,VALID_COORDINATE,,,,False
+100,서초구,잠원동 주민센터,서울특별시 서초구 나루터로 38 (잠원동),37.5149680774,127.0139821388,True,True,VALID_COORDINATE,,,,False
+101,서초구,반포본동 주민센터,서울특별시 서초구 신반포로 23 (반포동),37.5017471401,126.9872317712,True,True,VALID_COORDINATE,,,,False
+102,서초구,반포1동 주민센터,서울특별시 서초구 사평대로 273 (반포동),37.505094038,127.0133786195,True,True,VALID_COORDINATE,,,,False
+103,서초구,반포2동 주민센터,서울특별시 서초구 신반포로15길 16(반포동),37.5045865893,126.9944715019,True,True,VALID_COORDINATE,,,,False
+104,서초구,반포3동 주민센터,"서울특별시 서초구 신반포로23길 78, 지하주차장(반포동, 반포3동주민센터)",37.5120479869,127.0056086763,True,True,VALID_COORDINATE,,,,False
+105,서초구,반포4동 주민센터,서울특별시 서초구 사평대로28길 70 (반포동),37.4974858902,127.0003286274,True,True,VALID_COORDINATE,,,,False
+106,서초구,방배본동 주민센터,서울특별시 서초구 동광로19길 38 (방배동),37.4941486659,126.988846954,True,True,VALID_COORDINATE,,,,False
+107,서초구,방배1동 주민센터,서울특별시 서초구 효령로29길 43 (방배동),37.4833616584,126.9945138825,True,True,VALID_COORDINATE,,,,False
+108,서초구,방배2동 주민센터,서울특별시 서초구 청두곶길 36 (방배동),37.4797726352,126.9855596356,True,True,VALID_COORDINATE,,,,False
+109,서초구,방배3동 주민센터,서울특별시 서초구 방배로 40 (방배동),37.4784387625,126.9999966083,True,True,VALID_COORDINATE,,,,False
+110,서초구,방배4동 주민센터,서울특별시 서초구 방배로 173 (방배동),37.4890076091,126.9922423974,True,True,VALID_COORDINATE,,,,False
+111,서초구,양재1동 주민센터,서울특별시 서초구 바우뫼로 41 (우면동),37.4716710604,127.0266687873,True,True,VALID_COORDINATE,,,,False
+112,서초구,양재2동 주민센터,서울특별시 서초구 강남대로12길 44 (양재동),37.4706450224,127.0412829291,True,True,VALID_COORDINATE,,,,False
+113,서초구,내곡동 주민센터,"서울특별시 서초구 청계산로15길 77, 내곡열린문화센터(신원동)",37.4493075204,127.0582113898,True,True,VALID_COORDINATE,,,,False
+114,서초구,서초구립 양재노인종합복지관,서울특별시 서초구 강남대로30길 73-7(양재동),37.483020011,127.0408159987,True,True,VALID_COORDINATE,,,,False
+115,서초구,서초구립 방배노인종합복지관,서울특별시 서초구 방배천로 48 (방배동),37.4807674284,126.9827868584,True,True,VALID_COORDINATE,,,,False
+116,서초구,서초구립 중앙노인종합복지관,서울특별시 서초구 서초대로54길 45(서초동),37.4923242677,127.016810974,True,True,VALID_COORDINATE,,,,False
+117,서초구,우면종합사회복지관,서울특별시 서초구 바우뫼로 43 바우뫼복지문화회관(우면동),37.4717421876,127.0269012373,True,True,VALID_COORDINATE,,,,False
+118,서초구,서초구립 양재종합사회복지관,서울특별시 서초구 남부순환로 2610 양재종합사회복지관(양재동),37.4845270215,127.0361644799,True,True,VALID_COORDINATE,,,,False
+119,서초구,반포현대동궁아파트,서울특별시 서초구 사평대로 154 (반포4동),37.5007885086,127.0022008603,True,True,VALID_COORDINATE,,,,False
+120,서초구,잠원동아아파트,서울특별시 서초구 신반포로33길 15 (반포3동),37.5090443277,127.009524539,True,True,VALID_COORDINATE,,,,False
+121,서초구,신반포7차아파트,서울특별시 서초구 잠원로 88 (반포3동),37.5122489378,127.0082261259,True,True,VALID_COORDINATE,,,,False
+122,서초구,방배서리풀그랑블아파트,서울특별시 서초구 서초대로34가길 52 (방배1동),37.4860808781,126.9974987449,True,True,VALID_COORDINATE,,,,False
+123,서초구,방배자이아파트,서울특별시 서초구 방배로18길 67 (방배1동),37.4859662363,126.998962823,True,True,VALID_COORDINATE,,,,False
+124,서초구,서초힐스아파트,서울특별시 서초구 양재대로2길 90 (우면동),37.4576052707,127.0175705311,True,True,VALID_COORDINATE,,,,False
+125,서초구,서초자이아파트,서울특별시 서초구 효령로68길 81 (서초1동),37.4851864115,127.0206731099,True,True,VALID_COORDINATE,,,,False
+126,서초구,반포한신타워아파트,서울특별시 서초구 잠원로3길 8 (반포3동),37.5111929065,127.0061578575,True,True,VALID_COORDINATE,,,,False
+127,서초구,양재우성아파트,서울특별시 서초구 바우뫼로 91 (양재1동),37.4750404702,127.0317990406,True,True,VALID_COORDINATE,,,,False
+128,서초구,방배3차현대홈타운,서울특별시 서초구 방배중앙로21길 55 (방배본동),37.4918229813,126.9840857282,True,True,VALID_COORDINATE,,,,False
+129,서초구,래미안서초스위트아파트,서울특별시 서초구 서운로 221 (서초4동),37.502097191,127.019869045,True,True,VALID_COORDINATE,,,,False
+130,서초구,서초1동 주민센터,서울특별시 서초구 사임당로 89 (서초동),37.4901915356,127.0194670761,True,True,VALID_COORDINATE,,,,False
+131,서초구,서초2동 주민센터,서울특별시 서초구 서초대로70길 51 (서초동),37.4920694664,127.0249477593,True,True,VALID_COORDINATE,,,,False
+132,서초구,서초3동 주민센터,서울특별시 서초구 반포대로 34 (서초동),37.4837163549,127.0119913425,True,True,VALID_COORDINATE,,,,False
+133,서초구,서초4동 주민센터,서울특별시 서초구 서운로26길3,37.5027155849,127.0222100226,True,True,VALID_COORDINATE,,,,False
+134,서초구,서초구청,서울특별시 서초구 남부순환로 2584,37.4836248649,127.032683002,True,True,VALID_COORDINATE,,,,False
+135,서초구,서초문화예술회관,서울특별시 서초구 강남대로 201,37.4818278431,127.0359571796,True,True,VALID_COORDINATE,,,,False
+136,서초구,서초구 보건소,서울특별시 서초구 남부순환로 2584,37.4836248649,127.032683002,True,True,VALID_COORDINATE,,,,False
+137,서초구,서초교대이편한세상아파트,서울특별시 서초구 서초중앙로24길 33(서초4동),37.4957534655,127.0170547585,True,True,VALID_COORDINATE,,,,False
+138,서초구,롯데캐슬 클래식 아파트,서울특별시 서초구 서운로 197,37.4994826683,127.0208201079,True,True,VALID_COORDINATE,,,,False
+139,서초구,잠원동 롯데캐슬 아파트,서울특별시 서초구 잠원로 14길 23,37.5185371274,127.0154696223,True,True,VALID_COORDINATE,,,,False
+140,서초구,서초그랑자이,서울특별시 서초구 효령로 391,37.4889307774,127.0260569101,True,True,VALID_COORDINATE,,,,False
+141,성북구,성북구청,서울특별시 성북구 보문로 168,37.58945628,127.0168496,True,True,VALID_COORDINATE,,,,False
+142,성북구,성북동주민센터,서울특별시 성북구 성북로 37,37.59105175,127.0032478,True,True,VALID_COORDINATE,,,,False
+143,성북구,삼선동주민센터,서울특별시 성북구 보문로 190,37.59084573,127.0146418,True,True,VALID_COORDINATE,,,,False
+144,성북구,동선동주민센터,서울특별시 성북구 동소문로26길 27,37.59398014,127.0204087,True,True,VALID_COORDINATE,,,,False
+145,성북구,돈암1동주민센터,서울특별시 성북구 정릉로 392,37.60341486,127.0263745,True,True,VALID_COORDINATE,,,,False
+146,성북구,돈암2동주민센터,서울특별시 성북구 흥천사길 7,37.59801698,127.010539,True,True,VALID_COORDINATE,,,,False
+147,성북구,안암동주민센터,서울특별시 성북구 고려대로 16,37.58568552,127.0214295,True,True,VALID_COORDINATE,,,,False
+148,성북구,보문동주민센터,서울특별시 성북구 안암로3길 35,37.58037354,127.0228035,True,True,VALID_COORDINATE,,,,False
+149,성북구,정릉1동주민센터,서울특별시 성북구 정릉로38마길 33,37.6014358,127.0166418,True,True,VALID_COORDINATE,,,,False
+150,성북구,정릉2동주민센터,서울특별시 성북구 정릉로 242,37.60474016,127.0105826,True,True,VALID_COORDINATE,,,,False
+151,성북구,정릉3동주민센터,서울특별시 성북구 솔샘로1길 6-3,37.60895467,127.0041769,True,True,VALID_COORDINATE,,,,False
+152,성북구,정릉4동주민센터,서울특별시 성북구 보국문로 106-1,37.61335758,127.0070184,True,True,VALID_COORDINATE,,,,False
+153,성북구,길음1동주민센터,서울특별시 성북구 길음로 92,37.61048654,127.0194561,True,True,VALID_COORDINATE,,,,False
+154,성북구,길음2동주민센터,서울특별시 성북구 삼양로2길 70,37.60680733,127.0272794,True,True,VALID_COORDINATE,,,,False
+155,성북구,종암동주민센터,서울특별시 성북구 종암로 98-8,37.59903437,127.0352236,True,True,VALID_COORDINATE,,,,False
+156,성북구,월곡1동주민센터,서울특별시 성북구 오패산로 96,37.61053624,127.035762,True,True,VALID_COORDINATE,,,,False
+157,성북구,월곡2동주민센터,서울특별시 성북구 화랑로 152,37.60577977,127.0478713,True,True,VALID_COORDINATE,,,,False
+158,성북구,장위1동주민센터,서울특별시 성북구 장위로 61,37.61406942,127.0436684,True,True,VALID_COORDINATE,,,,False
+159,성북구,장위2동주민센터,서울특별시 성북구 돌곶이로27길 12,37.61239016,127.0544978,True,True,VALID_COORDINATE,,,,False
+160,성북구,장위3동주민센터,서울특별시 성북구 한천로 657,37.61655912,127.0566145,True,True,VALID_COORDINATE,,,,False
+161,성북구,석관동주민센터,서울특별시 성북구 화랑로 296,37.61297096,127.0614241,True,True,VALID_COORDINATE,,,,False
+162,성북구,성북구 보건소,서울특별시 성북구 화랑로 63 (하월곡동),37.60276167,127.039514,True,True,VALID_COORDINATE,,,,False
+163,성북구,성북구 동선보건지소,서울특별시 성북구 아리랑로3길 8,37.59360802,127.015754,True,True,VALID_COORDINATE,,,,False
+164,성북구,성북구 정릉아동보건지소,서울특별시 성북구 보국문로4길 8,37.60522963,127.0119867,True,True,VALID_COORDINATE,,,,False
+165,성북구,성북구 장위석관보건지소,서울특별시 성북구 한천로 568,37.61051557,127.0633213,True,True,VALID_COORDINATE,,,,False
+166,성북구,성북장애인복지관,서울특별시 성북구 화랑로 130,37.60459871,127.0457199,True,True,VALID_COORDINATE,,,,False
+167,성북구,성북노인종합복지관,서울특별시 성북구 종암로15길 10,37.59779025,127.0344101,True,True,VALID_COORDINATE,,,,False
+168,성북구,성북성심신경과의원(추가),서울특별시 성북구 동소문로 181,37.5983886,127.0214439,True,True,VALID_COORDINATE,,,,False
+169,성북구,에스메디센터내과외과의원(추가),서울특별시 성북구 오패산로 99,37.6107514,127.0351644,True,True,VALID_COORDINATE,,,,False
+170,성북구,우신향병원,서울특별시 성북구 안암로 99,37.58487973,127.0312355,True,True,VALID_COORDINATE,,,,False
+171,성북구,국민건강보험공단 성북지사,서울특별시 성북구 화랑로 35,37.60310257,127.0359466,True,True,VALID_COORDINATE,,,,False
+172,성북구,e-편한세상보문아파트,서울특별시 성북구 낙산길 255,37.58277838,127.0156254,True,True,VALID_COORDINATE,,,,False
+173,성북구,삼선푸르지오아파트,서울특별시 성북구 보문로29다길 31,37.58417735,127.0126186,True,True,VALID_COORDINATE,,,,False
+174,성북구,돈암현대아파트,서울특별시 성북구 정릉로 404,37.60429852,127.0287962,True,True,VALID_COORDINATE,,,,False
+175,성북구,길음동부센트레빌아파트,서울특별시 성북구 숭인로2길 61,37.60935341,127.0249739,True,True,VALID_COORDINATE,,,,False
+176,성북구,종암2차아이파크아파트,서울특별시 성북구 종암로9길 71,37.59630307,127.032513,True,True,VALID_COORDINATE,,,,False
+177,성북구,종암래미안아파트,서울특별시 성북구 종암로25길 30,37.60149253,127.0310807,True,True,VALID_COORDINATE,,,,False
+178,성북구,월곡꿈의숲푸르지오아파트,서울특별시 성북구 오패산로16가길 40,37.60987826,127.0388603,True,True,VALID_COORDINATE,,,,False
+179,성북구,월곡두산위브아파트,서울특별시 성북구 오패산로 46,37.60747384,127.0387095,True,True,VALID_COORDINATE,,,,False
+180,성북구,길음뉴타운데시앙아파트,서울특별시 성북구 서경로 28,37.60614991,127.0157105,True,True,VALID_COORDINATE,,,,False
+181,성북구,장위꿈의숲대명루첸아파트,서울특별시 성북구 월계로36길 27,37.62144228,127.0463268,True,True,VALID_COORDINATE,,,,False
+182,성북구,종암종암SK아파트,서울특별시 성북구 종암로24가길 53,37.60084117,127.0379642,True,True,VALID_COORDINATE,,,,False
+183,양천구,양천구보건소,서울특별시 양천구 목동서로 339(신정동),37.51770616,126.86573942,True,True,VALID_COORDINATE,Kakao Local API (address geocoding),ADDRESS_VERIFIED,,False
+184,양천구,신월보건지소,서울특별시 양천구 남부순환로 407(신월동),37.53133706,126.83182328,True,True,VALID_COORDINATE,Kakao Local API (address geocoding),ADDRESS_VERIFIED,,False
+185,양천구,목동보건지소,서울특별시 양천구 목동중앙본로7가길 11(목동),37.54010266,126.86697685,True,True,VALID_COORDINATE,Kakao Local API (address geocoding),ADDRESS_VERIFIED,,False
+186,양천구,메디힐병원,서울특별시 양천구 남부순환로 331(신월동),37.53726134,126.82784139,True,True,VALID_COORDINATE,Kakao Local API (address geocoding),ADDRESS_VERIFIED,,False
+187,양천구,목동힘찬병원,서울특별시 양천구 신목로 120(목동),37.52498097,126.87684657,True,True,VALID_COORDINATE,Kakao Local API (address geocoding),ADDRESS_VERIFIED,,False
+188,양천구,포미즈여성병원,서울특별시 양천구 공항대로 610(목동),37.54678906,126.87235841,True,True,VALID_COORDINATE,Kakao Local API (address geocoding),ADDRESS_VERIFIED,,False
+189,중구,서울지역본부,서울특별시 중구 퇴계로 173,37.56182572,126.9910585,True,True,VALID_COORDINATE,,,,False
+190,중구,국민건강보험공단 중구지사,서울특별시 중구 소공로 70,37.56159874,126.9821691,True,True,VALID_COORDINATE,,,,False
+191,중구,진양아파트,서울특별시 중구 퇴계로 217,37.56242271,126.9959312,True,True,VALID_COORDINATE,,,,False
+192,중구,신당KCC스위첸,"서울특별시 중구 난계로 130, 101동 (신당동, 신당KCC스위첸)",37.56312584,127.0247943,True,True,VALID_COORDINATE,,,,False
+193,중구,서울역센트럴자이,서울특별시 중구 만리재로 175,37.55382801,126.9640273,True,True,VALID_COORDINATE,,,,False
+194,중구,한진해모로아파트(임대동),"서울특별시 중구 왕십리로39길 30, 104동 (신당동, 한진해모로)",37.56372841,127.0257107,True,True,VALID_COORDINATE,,,,False
+195,중구,한진해모로아파트(일반분양동),"서울특별시 중구 왕십리로39길 30, 104동 (신당동, 한진해모로)",37.56372841,127.0257107,True,True,VALID_COORDINATE,,,,False
+196,중구,신당파인힐하나유보라,"서울특별시 중구 왕십리로 407, 102동 (신당동, 신당 파인힐 하나유보라)",37.56478,127.02471,True,True,VALID_COORDINATE,,,,False
+197,중구,청계천두산위브더제니스,서울특별시 중구 다산로46길 17,37.5668676,127.0171229,True,True,VALID_COORDINATE,,,,False
+198,중구,별장아파트,서울특별시 중구 퇴계로12길 88,37.55571932,126.9818214,True,True,VALID_COORDINATE,,,,False
+199,중구,덕수궁롯데캐슬,"서울특별시 중구 서소문로9길 28, 102동 (순화동, 덕수궁롯데캐슬)",37.56370849,126.970043,True,True,VALID_COORDINATE,,,,False
+200,중구,순화동포스코더샆,서울특별시 중구 칠패로 27,37.5602669,126.9720353,True,True,VALID_COORDINATE,,,,False
+201,중구,정동아파트,서울특별시 중구 정동길 13,37.56729037,126.9702944,True,True,VALID_COORDINATE,,,,False
+202,중구,중림동 주민센터,서울특별시 중구 만리재로 175,37.55382801,126.9640273,True,True,VALID_COORDINATE,,,,False
+203,중구,황학동 주민센터,서울특별시 중구 난계로11길 52,37.56742273,127.0213823,True,True,VALID_COORDINATE,,,,False
+204,중구,동화동 주민센터,서울특별시 중구 다산로36길 100,37.55998237,127.0194224,True,True,VALID_COORDINATE,,,,False
+205,중구,신당5동 주민센터,서울특별시 중구 다산로44길 85,37.5651269,127.0218661,True,True,VALID_COORDINATE,,,,False
+206,중구,청구동 주민센터,서울특별시 중구 청구로3길 55,37.55706761,127.0146854,True,True,VALID_COORDINATE,,,,False
+207,중구,약수동 주민센터,서울특별시 중구 다산로 92,37.55247345,127.0089948,True,True,VALID_COORDINATE,,,,False
+208,중구,다산동 주민센터,서울특별시 중구 동호로15길 50,37.55433289,127.0082945,True,True,VALID_COORDINATE,,,,False
+209,중구,신당동 주민센터,서울특별시 중구 다산로33길 3,37.56210861,127.014538,True,True,VALID_COORDINATE,,,,False
+210,중구,을지로동 주민센터,서울특별시 중구 충무로9길 20,37.56701313,126.9913203,True,True,VALID_COORDINATE,,,,False
+211,중구,광희동 주민센터,서울특별시 중구 퇴계로 303-9,37.56446028,127.005037,True,True,VALID_COORDINATE,,,,False
+212,중구,장충동 주민센터,서울특별시 중구 장충단로8길 22,37.56190715,127.0078401,True,True,VALID_COORDINATE,,,,False
+213,중구,필동 주민센터,서울특별시 중구 퇴계로36길 42,37.56015769,126.9955974,True,True,VALID_COORDINATE,,,,False
+214,중구,명동 주민센터,서울특별시 중구 퇴계로20길 3,37.5600479,126.9858184,True,True,VALID_COORDINATE,,,,False
+215,중구,회현동 주민센터,서울특별시 중구 퇴계로8길 46,37.55728611,126.9793555,True,True,VALID_COORDINATE,,,,False
+216,중구,소공동 주민센터,서울특별시 중구 남대문로1길 31-5,37.56242289,126.9770419,True,True,VALID_COORDINATE,,,,False
+217,중구,중구청,서울특별시 중구 창경궁로 17,37.56412015,126.9980097,True,True,VALID_COORDINATE,,,,False
+218,중랑구,면목본동주민센터,서울특별시 중랑구 면목로 397,37.58735132,127.0875562,True,True,VALID_COORDINATE,,,,False
+219,중랑구,면목2동주민센터,서울특별시 중랑구 동일로101길 20-15,37.58977212,127.0790343,True,True,VALID_COORDINATE,,,,False
+220,중랑구,면목3.8동주민센터,서울특별시 중랑구 사가정로51길 48,37.58295821,127.088074,True,True,VALID_COORDINATE,,,,False
+221,중랑구,면목4동주민센터,서울특별시 중랑구 면목로 246,37.57470357,127.0856046,True,True,VALID_COORDINATE,,,,False
+222,중랑구,면목5동주민센터,서울특별시 중랑구 동일로 619,37.58574792,127.0794801,True,True,VALID_COORDINATE,,,,False
+223,중랑구,면목7동주민센터,서울특별시 중랑구 면목로36길 4,37.57775582,127.0860637,True,True,VALID_COORDINATE,,,,False
+224,중랑구,상봉1동주민센터,서울특별시 중랑구 상봉중앙로1길 6,37.5998368,127.0871662,True,True,VALID_COORDINATE,,,,False
+225,중랑구,상봉2동주민센터,서울특별시 중랑구 동일로114길 10,37.59289489,127.0808529,True,True,VALID_COORDINATE,,,,False
+226,중랑구,중화1동주민센터,서울특별시 중랑구 동일로134길 17,37.60117399,127.0806607,True,True,VALID_COORDINATE,,,,False
+227,중랑구,중화2동주민센터,서울특별시 중랑구 봉화산로27,37.60202101,127.0774218,True,True,VALID_COORDINATE,,,,False
+228,중랑구,묵1동주민센터,서울특별시 중랑구 공릉로2가길 5,37.61241106,127.0784838,True,True,VALID_COORDINATE,,,,False
+229,중랑구,묵2동주민센터,서울특별시 중랑구 중랑역로 181,37.60960412,127.0760103,True,True,VALID_COORDINATE,,,,False
+230,중랑구,망우본동주민센터,서울특별시 중랑구 망우로67길 10,37.60055921,127.1014833,True,True,VALID_COORDINATE,,,,False
+231,중랑구,망우3동주민센터,서울특별시 중랑구 겸재로61길 40,37.59189513,127.0949177,True,True,VALID_COORDINATE,,,,False
+232,중랑구,신내1동주민센터,서울특별시 중랑구 용마산로129나길 35,37.60586933,127.0995055,True,True,VALID_COORDINATE,,,,False
+233,중랑구,신내2동주민센터,서울특별시 중랑구 봉화산로 190,37.60626095,127.094155,True,True,VALID_COORDINATE,,,,False
