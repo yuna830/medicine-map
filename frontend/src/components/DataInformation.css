@@ -1,0 +1,355 @@
+
+/* =========================================
+   데이터 출처 및 분석 유의사항
+========================================= */
+
+.data-detail-section {
+  overflow: hidden;
+}
+
+.data-detail-section .data-info-toggle {
+  width: 100%;
+}
+
+.data-detail-chevron-open {
+  transform: rotate(180deg);
+}
+
+.data-detail-content {
+  padding: 20px;
+  border-top: 1px solid #edf0f6;
+  background: #ffffff;
+}
+
+/* 요약 지표 */
+
+.data-detail-overview {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.data-detail-overview > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 14px;
+  border: 1px solid #e7ebf3;
+  border-radius: 10px;
+  background: #f8faff;
+}
+
+.data-detail-overview span {
+  font-size: 11px;
+  color: #7886a0;
+}
+
+.data-detail-overview strong {
+  font-size: 15px;
+  color: #283b60;
+}
+
+/* 탭 메뉴 */
+
+.data-detail-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e8edf5;
+}
+
+.data-detail-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 14px;
+  border: 1px solid #e1e6f0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #67758e;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.data-detail-tab:hover {
+  background: #f5f7ff;
+}
+
+.data-detail-tab.active {
+  border-color: #c9d3fa;
+  background: #eef2ff;
+  color: #425bc5;
+}
+
+.data-detail-tab:focus-visible,
+.data-download-grid button:focus-visible {
+  outline: 2px solid #697ddb;
+  outline-offset: 2px;
+}
+
+/* 내용 패널 */
+
+.data-detail-panel {
+  min-height: 190px;
+  padding-top: 22px;
+}
+
+.data-detail-heading {
+  margin-bottom: 16px;
+}
+
+.data-detail-heading h3 {
+  margin: 0 0 6px;
+  color: #263653;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.data-detail-heading p {
+  margin: 0;
+  color: #8490a4;
+  font-size: 12px;
+}
+
+/* 분석 데이터 카드 */
+
+.data-source-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.data-source-card {
+  padding: 15px;
+  border: 1px solid #e6ebf3;
+  border-radius: 10px;
+  background: #fbfcff;
+}
+
+.data-source-card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.data-source-card-heading strong {
+  color: #2e3e60;
+  font-size: 13px;
+}
+
+.data-source-card-heading span {
+  flex-shrink: 0;
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #eef2fb;
+  color: #6174a0;
+  font-size: 10px;
+}
+
+.data-source-card p {
+  margin: 12px 0 7px;
+  color: #53627e;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.data-source-card small {
+  color: #8995aa;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* 안내 문구 */
+
+.data-detail-note,
+.data-detail-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 13px 14px;
+  border: 1px solid #e1e8f6;
+  border-radius: 9px;
+  background: #f5f8ff;
+  color: #63769d;
+}
+
+.data-detail-note svg,
+.data-detail-warning svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.data-detail-note p,
+.data-detail-warning p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.data-detail-warning {
+  border-color: #f0e3cf;
+  background: #fffaf2;
+  color: #846a45;
+}
+
+/* 분석 산식 */
+
+.data-method-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.data-method-list article {
+  padding: 15px;
+  border: 1px solid #e6ebf3;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.data-method-list article > strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #2d416a;
+  font-size: 13px;
+}
+
+.data-formula {
+  padding: 11px;
+  border-radius: 7px;
+  background: #f2f5fc;
+  color: #3f5c97;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.data-method-list article > p {
+  margin: 10px 0 0;
+  color: #758197;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* 데이터 한계 */
+
+.data-limitations-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.data-limitation-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 13px;
+  border: 1px solid #e8ecf3;
+  border-radius: 8px;
+  background: #fbfcff;
+}
+
+.data-limitation-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #7787ae;
+}
+
+.data-limitation-item p {
+  margin: 0;
+  color: #60718d;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* CSV 다운로드 */
+
+.data-download-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.data-download-grid button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #dce4f3;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #4964ae;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.data-download-grid button:hover:not(:disabled) {
+  background: #f2f5ff;
+  border-color: #c9d5f9;
+}
+
+.data-download-grid button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.data-download-grid button > span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.data-download-grid strong {
+  color: #344c86;
+  font-size: 13px;
+}
+
+.data-download-grid small {
+  color: #8b96aa;
+  font-size: 11px;
+}
+
+.data-download-caption {
+  margin-top: 14px;
+  color: #8591a7;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* 화면 폭이 좁아지는 경우 */
+
+@media (max-width: 900px) {
+  .data-detail-overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .data-source-grid,
+  .data-method-list,
+  .data-limitations-list,
+  .data-download-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .data-detail-content {
+    padding: 14px;
+  }
+
+  .data-detail-tab {
+    flex: 1 1 calc(50% - 8px);
+  }
+
+  .data-detail-overview {
+    gap: 8px;
+  }
+}

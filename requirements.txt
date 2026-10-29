@@ -1,5 +1,12 @@
+# 데이터 정제 및 분석
 pandas>=2.2,<3.0
 numpy>=1.26,<3.0
-scipy>=1.11,<2.0
+
+# 분석 결과 시각화
 matplotlib>=3.8,<4.0
-jupyterlab>=4.2,<5.0
+
+# 좌표 보완 API
+requests>=2.31,<3.0
+
+# 환경변수 관리
+python-dotenv>=1.0,<2.0

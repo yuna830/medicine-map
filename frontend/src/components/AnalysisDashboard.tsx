@@ -1146,11 +1146,30 @@ export default function AnalysisDashboard({
                                     ]}
                                 />
 
+
                                 <Bar
+                                    onClick={(entry: unknown) => {
+                                        const row = entry as {
+                                            district?: string;
+                                            payload?: {
+                                                district?: string;
+                                            };
+                                        };
+
+                                        const clickedDistrict =
+                                            row.payload?.district ??
+                                            row.district;
+
+                                        if (clickedDistrict) {
+                                            onDistrictChange(clickedDistrict);
+                                        }
+                                    }}
+                                    cursor="pointer"
                                     dataKey="value"
                                     maxBarSize={17}
                                     radius={[0, 4, 4, 0]}
                                 >
+
                                     {chartRows.map((row) => (
                                         <Cell
                                             key={row.district}

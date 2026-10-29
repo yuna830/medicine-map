@@ -5,8 +5,7 @@ import {
   AlertCircle,
   ArrowUpRight,
   ChevronDown,
-  ChevronRight,
-  Database,
+  Download,
   ExternalLink,
   Info,
   MapPin,
@@ -19,7 +18,10 @@ import {
 import KakaoMap from './components/KakaoMap';
 import SummaryCards from './components/SummaryCards';
 import AnalysisDashboard from './components/AnalysisDashboard';
+import DataInformation from './components/DataInformation';
+
 import { loadMedicineData } from './services/dataService';
+import { exportFacilityCsv } from './services/exportCsv';
 
 import type {
   Facility,
@@ -30,9 +32,39 @@ import './App.css';
 
 const ALL = '전체';
 
+type DateFilter =
+  | 'all'
+  | 'since2025'
+  | 'before2025';
+
+function matchesDate(
+  date: string | null,
+  mode: DateFilter,
+): boolean {
+  if (mode === 'all') {
+    return true;
+  }
+
+  if (!date) {
+    return false;
+  }
+
+  const normalized = date.slice(0, 10);
+
+  if (mode === 'since2025') {
+    return normalized >= '2025-01-01';
+  }
+
+  return normalized < '2025-01-01';
+}
+
 function formatDate(value: string | null): string {
   return value ? value.slice(0, 10) : '미확인';
 }
+
+/* =========================================
+   수거시설 목록 아이템
+========================================= */
 
 function FacilityListItem({
   facility,
@@ -58,7 +90,9 @@ function FacilityListItem({
       </div>
 
       <span className="compact-address">
-        {facility.road_address || '주소 정보 없음'}
+        {facility.road_address ||
+          facility.lot_address ||
+          '주소 정보 없음'}
       </span>
 
       <div className="compact-facility-meta">
@@ -76,6 +110,10 @@ function FacilityListItem({
   );
 }
 
+/* =========================================
+   수거시설 상세 정보
+========================================= */
+
 function CompactFacilityDetail({
   facility,
   onClose,
@@ -85,10 +123,10 @@ function CompactFacilityDetail({
 }) {
   const directionsUrl =
     facility.latitude != null &&
-      facility.longitude != null
+    facility.longitude != null
       ? `https://map.kakao.com/link/to/${encodeURIComponent(
-        facility.name,
-      )},${facility.latitude},${facility.longitude}`
+          facility.name,
+        )},${facility.latitude},${facility.longitude}`
       : null;
 
   return (
@@ -113,7 +151,9 @@ function CompactFacilityDetail({
       </div>
 
       <p className="detail-address">
-        {facility.road_address || '주소 정보 없음'}
+        {facility.road_address ||
+          facility.lot_address ||
+          '주소 정보 없음'}
       </p>
 
       <div className="detail-meta-row">
@@ -166,6 +206,10 @@ function CompactFacilityDetail({
   );
 }
 
+/* =========================================
+   메인 앱
+========================================= */
+
 function App() {
   const [data, setData] =
     useState<MedicineData | null>(null);
@@ -178,25 +222,36 @@ function App() {
   const [district, setDistrict] = useState(ALL);
   const [query, setQuery] = useState('');
 
+  const [dateFilter, setDateFilter] =
+    useState<DateFilter>('all');
+
+  const [sameLocation, setSameLocation] =
+    useState<Facility[]>([]);
+
   const [selectedId, setSelectedId] =
     useState<number | null>(null);
 
-  const [showDataInfo, setShowDataInfo] =
-    useState(false);
+  /* =====================================
+     데이터 불러오기
+  ===================================== */
 
   useEffect(() => {
     let cancelled = false;
 
     loadMedicineData()
       .then((result) => {
-        if (cancelled) return;
+        if (cancelled) {
+          return;
+        }
 
         setData(result);
         setError(null);
         setLoading(false);
       })
       .catch((caught: unknown) => {
-        if (cancelled) return;
+        if (cancelled) {
+          return;
+        }
 
         setError(
           caught instanceof Error
@@ -212,8 +267,14 @@ function App() {
     };
   }, []);
 
+  /* =====================================
+     시설 검색 및 필터
+  ===================================== */
+
   const filteredFacilities = useMemo(() => {
-    if (!data) return [];
+    if (!data) {
+      return [];
+    }
 
     const keyword = query.trim().toLowerCase();
 
@@ -221,6 +282,11 @@ function App() {
       const matchesDistrict =
         district === ALL ||
         facility.district === district;
+
+      const matchesPeriod = matchesDate(
+        facility.reference_date,
+        dateFilter,
+      );
 
       const searchableText = [
         facility.name,
@@ -233,10 +299,15 @@ function App() {
 
       return (
         matchesDistrict &&
+        matchesPeriod &&
         searchableText.includes(keyword)
       );
     });
-  }, [data, district, query]);
+  }, [data, district, query, dateFilter]);
+
+  /* =====================================
+     선택 시설
+  ===================================== */
 
   const selectedFacility = useMemo(() => {
     if (!data || selectedId === null) {
@@ -244,11 +315,15 @@ function App() {
     }
 
     return (
-      data.facilities.find(
+      filteredFacilities.find(
         (facility) => facility.id === selectedId,
       ) ?? null
     );
-  }, [data, selectedId]);
+  }, [data, filteredFacilities, selectedId]);
+
+  /* =====================================
+     지도 표시 대상
+  ===================================== */
 
   const mapFacilities = useMemo(
     () =>
@@ -258,14 +333,63 @@ function App() {
     [filteredFacilities],
   );
 
+  /* =====================================
+     이벤트 함수
+  ===================================== */
+
   function changeDistrict(value: string) {
     setDistrict(value);
     setSelectedId(null);
+    setSameLocation([]);
+  }
+
+  function changeQuery(value: string) {
+    setQuery(value);
+    setSelectedId(null);
+    setSameLocation([]);
+  }
+
+  function changeDateFilter(value: DateFilter) {
+    setDateFilter(value);
+    setSelectedId(null);
+    setSameLocation([]);
   }
 
   function selectFacility(facility: Facility) {
     setSelectedId(facility.id);
+    setSameLocation([]);
   }
+
+  function selectMapLocation(
+    facilitiesAtLocation: Facility[],
+  ) {
+    if (facilitiesAtLocation.length === 0) {
+      return;
+    }
+
+    if (facilitiesAtLocation.length === 1) {
+      selectFacility(facilitiesAtLocation[0]);
+      return;
+    }
+
+    setSelectedId(null);
+    setSameLocation(facilitiesAtLocation);
+  }
+
+  function handleChartDistrictChange(value: string) {
+    changeDistrict(value);
+
+    document
+      .getElementById('finder')
+      ?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+  }
+
+  /* =====================================
+     로딩 및 오류
+  ===================================== */
 
   if (loading) {
     return (
@@ -288,37 +412,42 @@ function App() {
 
   return (
     <div className="app-shell">
+      {/* =====================================
+          헤더
+      ===================================== */}
+
       <header className="compact-header">
         <div className="compact-header-inner">
           <a href="#top" className="compact-brand">
             <span className="brand-icon">
               <Pill size={18} />
             </span>
+
             <span>폐의약품 수거시설 안내</span>
           </a>
 
-          <nav className="compact-nav">
+          <nav
+            className="compact-nav"
+            aria-label="주요 메뉴"
+          >
             <a href="#finder">시설 찾기</a>
             <a href="#analysis">지역 통계</a>
           </nav>
+
+          <span
+            className="coverage-label header-coverage"
+            aria-label="분석 대상 지역"
+          >
+            <MapPin size={14} />
+            서울시 {data.metadata.coverage.districts.length}개 구
+          </span>
         </div>
       </header>
 
       <main className="compact-main" id="top">
-        <div className="dashboard-heading">
-          <div>
-            <h1>우리 동네 폐의약품 수거시설</h1>
-            <p>
-              서울시 9개 자치구 공공데이터 기반
-              수거시설 위치 및 지역별 분포 분석
-            </p>
-          </div>
-
-          <span className="coverage-label">
-            <MapPin size={14} />
-            서울시 9개 구
-          </span>
-        </div>
+        {/* =====================================
+            상단 통계
+        ===================================== */}
 
         <SummaryCards
           metadata={data.metadata}
@@ -326,50 +455,54 @@ function App() {
           spatial={data.spatial}
         />
 
+        {/* =====================================
+            수거시설 찾기
+        ===================================== */}
+
         <section id="finder" className="main-finder">
           <div className="section-title-row">
             <h2>수거시설 찾기</h2>
 
             <span className="result-indicator">
               검색 {filteredFacilities.length}건
-
-              <span className="result-divider">
-                ·
-              </span>
-
+              <span className="result-divider">·</span>
               지도 {mapFacilities.length}건
             </span>
           </div>
 
-          <div className="compact-filters">
-            <label className="compact-search">
+          {/* =====================================
+              통합 검색 및 필터 영역
+          ===================================== */}
+
+          <div className="facility-toolbar">
+            {/* 시설명 및 주소 검색 */}
+
+            <label className="compact-search facility-search">
               <Search size={17} />
 
               <input
                 type="search"
                 placeholder="시설명 또는 주소 검색"
                 value={query}
-                onChange={(event) => {
-                  setQuery(event.target.value);
-                  setSelectedId(null);
-                }}
+                onChange={(event) =>
+                  changeQuery(event.target.value)
+                }
               />
 
               {query && (
                 <button
                   type="button"
-                  onClick={() => {
-                    setQuery('');
-                    setSelectedId(null);
-                  }}
                   aria-label="검색어 지우기"
+                  onClick={() => changeQuery('')}
                 >
                   <X size={15} />
                 </button>
               )}
             </label>
 
-            <label className="compact-select">
+            {/* 자치구 선택 */}
+
+            <label className="compact-select facility-district">
               <select
                 value={district}
                 onChange={(event) =>
@@ -383,10 +516,7 @@ function App() {
 
                 {data.metadata.coverage.districts.map(
                   (item) => (
-                    <option
-                      key={item}
-                      value={item}
-                    >
+                    <option key={item} value={item}>
                       {item}
                     </option>
                   ),
@@ -395,15 +525,74 @@ function App() {
 
               <ChevronDown size={16} />
             </label>
+
+            {/* 자료 기준일 선택 */}
+
+            <label className="compact-select facility-date">
+              <span className="facility-date-label">
+                자료 기준일
+              </span>
+
+              <select
+                value={dateFilter}
+                onChange={(event) => {
+                  const value = event.currentTarget.value;
+
+                  if (
+                    value === 'all' ||
+                    value === 'since2025' ||
+                    value === 'before2025'
+                  ) {
+                    changeDateFilter(value);
+                  }
+                }}
+                aria-label="자료 기준일"
+              >
+                <option value="all">
+                  전체 기록
+                </option>
+
+                <option value="since2025">
+                  2025년 이후
+                </option>
+
+                <option value="before2025">
+                  2025년 이전
+                </option>
+              </select>
+
+              <ChevronDown size={16} />
+            </label>
+
+            {/* 현재 필터에 맞는 CSV 다운로드 */}
+
+            <button
+              type="button"
+              className="facility-csv-button"
+              disabled={filteredFacilities.length === 0}
+              onClick={() =>
+                exportFacilityCsv(
+                  filteredFacilities,
+                  'medicine_facilities_filtered.csv',
+                )
+              }
+            >
+              <Download size={15} />
+              <span>현재 검색 결과 CSV</span>
+            </button>
           </div>
 
+          {/* =====================================
+              시설 목록과 지도
+          ===================================== */}
+
           <div className="compact-finder-grid">
+            {/* 시설 목록 */}
+
             <div className="compact-list-panel">
               <div className="compact-panel-heading">
                 <strong>수거시설 목록</strong>
-                <span>
-                  {filteredFacilities.length}건
-                </span>
+                <span>{filteredFacilities.length}건</span>
               </div>
 
               <div className="compact-list-scroll">
@@ -426,12 +615,55 @@ function App() {
               </div>
             </div>
 
+            {/* 지도 */}
+
             <div className="compact-map-panel">
               <KakaoMap
                 facilities={mapFacilities}
                 selectedFacility={selectedFacility}
                 onSelectFacility={selectFacility}
+                onSelectLocation={selectMapLocation}
               />
+
+              {/* 동일 좌표 시설 선택 */}
+
+              {sameLocation.length > 1 && (
+                <div className="shared-coordinate-panel">
+                  <div className="shared-coordinate-heading">
+                    <strong>
+                      같은 좌표의 시설 {sameLocation.length}건
+                    </strong>
+
+                    <button
+                      type="button"
+                      onClick={() => setSameLocation([])}
+                      aria-label="닫기"
+                    >
+                      <X size={16} />
+                    </button>
+                  </div>
+
+                  <p>
+                    서로 다른 시설 기록이 같은 좌표를
+                    사용하고 있습니다. 시설명을 선택해
+                    상세 정보를 확인하세요.
+                  </p>
+
+                  {sameLocation.map((item) => (
+                    <button
+                      type="button"
+                      key={item.id}
+                      onClick={() =>
+                        selectFacility(item)
+                      }
+                    >
+                      {item.name} · {item.district}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* 선택 시설 상세 */}
 
               {selectedFacility && (
                 <CompactFacilityDetail
@@ -445,58 +677,31 @@ function App() {
           </div>
         </section>
 
+        {/* =====================================
+            분석 차트
+        ===================================== */}
+
         <AnalysisDashboard
           districts={data.districts}
           monthly={data.monthly}
           spatial={data.spatial}
           selectedDistrict={district}
-          onDistrictChange={changeDistrict}
+          onDistrictChange={handleChartDistrictChange}
         />
 
+        {/* =====================================
+            데이터 안내
+        ===================================== */}
 
-        <section className="compact-data-info">
-          <button
-            type="button"
-            className="data-info-toggle"
-            onClick={() =>
-              setShowDataInfo((previous) => !previous)
-            }
-            aria-expanded={showDataInfo}
-          >
-            <span>
-              <Database size={16} />
-              데이터 출처 및 분석 유의사항
-            </span>
-
-            <ChevronRight
-              size={17}
-              className={showDataInfo ? 'rotated' : ''}
-            />
-          </button>
-
-          {showDataInfo && (
-            <div className="data-info-content">
-              <p>
-                <strong>분석 자료: </strong>
-                자치구별 폐의약품 수거시설 공공데이터,
-                서울시 주민등록인구,
-                길단위 유동인구,
-                폐의약품 수거 처리량
-              </p>
-
-              <ul>
-                {data.metadata.limitations.map(
-                  (limitation) => (
-                    <li key={limitation}>
-                      {limitation}
-                    </li>
-                  ),
-                )}
-              </ul>
-            </div>
-          )}
-        </section>
+        <DataInformation
+          data={data}
+          filteredFacilities={filteredFacilities}
+        />
       </main>
+
+      {/* =====================================
+          푸터
+      ===================================== */}
 
       <footer className="compact-footer">
         <span>

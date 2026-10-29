@@ -1,32 +1,361 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+# 서울시 폐의약품 수거시설 분포 및 공간적 격차 분석
 
-Currently, two official plugins are available:
+서울시 폐의약품 수거시설 공공데이터를 수집·정제하고, 시설의 공간적 분포와 인구 대비 시설 기록 비율을 분석한 데이터 시각화 프로젝트입니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Python을 이용해 데이터를 전처리하고, React 및 Kakao Maps를 활용해 분석 결과를 웹 대시보드로 구현했습니다.
 
-## React Compiler
+## 1. 프로젝트 개요
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 연구 배경
 
-## Expanding the Oxlint configuration
+폐의약품은 일반 쓰레기나 하수구에 버리지 않고 지정된 수거시설을 통해 배출해야 합니다.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+그러나 수거시설이 지역별로 얼마나 분포하는지, 인구 규모에 비해 시설이 얼마나 확보되어 있는지 비교하기는 쉽지 않습니다.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+본 프로젝트는 공공데이터를 기반으로 수거시설의 위치를 시각화하고, 지역별 분포 차이를 파악하는 것을 목적으로 합니다.
+
+### 분석 목적
+
+- 폐의약품 수거시설의 위치 및 분포 시각화
+- 자치구별 시설 기록 수 비교
+- 전체 인구 및 고령인구 대비 시설 기록 비율 분석
+- 시설 간 최근접 직선거리 비교
+- 2024년 월별 폐의약품 수거 처리량 추이 분석
+- 고령인구 수와 시설 기록 수 사이의 상관관계 분석
+
+## 2. 분석 범위
+
+| 구분 | 내용 |
+|---|---|
+| 분석 지역 | 서울특별시 9개 자치구 |
+| 대상 자치구 | 마포구, 양천구, 구로구, 관악구, 중구, 강동구, 서초구, 성북구, 중랑구 |
+| 시설 기록 | 233건 |
+| 좌표 확보 | 233건 |
+| 주민등록인구 | 2026년 2분기 |
+| 폐의약품 수거 처리량 | 2024년 |
+| 월별 처리량 자료 | 108건 (9개 구 × 12개월) |
+| 시설 자료 기준일 | 자치구별 상이 |
+
+본 분석은 서울시 25개 자치구 전체가 아닌, 원자료를 확보한 9개 자치구를 대상으로 합니다.
+
+시설 233건은 공공데이터에 수록된 기록 수이며, 현재 운영 중인 시설의 수를 확정한 값은 아닙니다.
+
+## 3. 주요 기능
+
+### 3.1 수거시설 위치 탐색
+
+- Kakao Maps 기반 시설 위치 표시
+- 시설명 및 주소 검색
+- 자치구별 시설 필터링
+- 시설 자료 기준일 필터링
+- 지도 마커 클러스터링
+- 동일 좌표의 시설 기록 선택
+- 시설별 주소, 기준일 및 위치 정보 확인
+- 카카오맵 길찾기 연결
+
+### 3.2 지역별 통계 분석
+
+다음 세 종류의 차트를 제공합니다.
+
+**지역별 지표 비교 — 가로 막대그래프**
+
+- 전체 인구 1만 명당 시설 기록 수
+- 고령인구 1만 명당 시설 기록 수
+- 평균 최근접 시설 간 직선거리
+
+지표를 전환하여 자치구별 차이를 비교할 수 있습니다.
+
+**2024년 월별 수거 처리량 — 선그래프**
+
+- 월별 수거 처리량 추이
+- 자치구 선택에 따른 데이터 변경
+- 연간 합계 및 월평균
+- 월별 표준편차 및 변동계수
+
+**고령인구와 시설 기록 수 — 산점도**
+
+- 자치구별 65세 이상 인구
+- 자치구별 수거시설 기록 수
+- Pearson 상관계수
+- 선택 자치구 강조
+
+### 3.3 상세 분석 정보
+
+상단 요약 카드와 차트의 상세 정보 버튼을 통해 다음 내용을 확인할 수 있습니다.
+
+- 분석 지표 계산 기준
+- 자치구별 최고·최저 수치
+- 지역 간 격차
+- 통계 해석
+- 데이터 한계 및 유의사항
+
+### 3.4 CSV 다운로드
+
+- 자치구별 분석 결과
+- 전체 수거시설 기록
+- 2024년 월별 수거 처리량
+- 현재 검색 및 필터 조건에 해당하는 시설 기록
+
+## 4. 사용 기술
+
+| 구분 | 기술 |
+|---|---|
+| 데이터 처리 | Python, pandas |
+| 프론트엔드 | React, TypeScript |
+| 개발 도구 | Vite |
+| 지도 | Kakao Maps JavaScript API |
+| 차트 | Recharts |
+| 아이콘 | Lucide React |
+| 데이터 전달 | JSON |
+| 결과 내보내기 | CSV |
+
+프론트엔드는 정적 JSON 파일을 불러오는 구조이며, 웹사이트 실행을 위해 별도의 Python API 서버를 실행할 필요는 없습니다.
+
+## 5. 프로젝트 구조
+
+```text
+medicine-map/
+├── data/
+│   ├── raw/                  # 원본 공공데이터
+│   ├── interim/              # 중간 전처리 결과
+│   ├── processed/            # 최종 전처리 데이터
+│   ├── geocoded/             # 좌표 보완 데이터
+│   └── web/                  # 웹사이트용 JSON
+│
+├── frontend/
+│   ├── public/
+│   │   └── data/             # 실제 웹에서 불러오는 JSON
+│   ├── src/
+│   │   ├── components/       # 지도, 통계, 데이터 안내
+│   │   ├── services/         # 데이터 로드, CSV 다운로드
+│   │   ├── types/            # TypeScript 타입
+│   │   ├── App.tsx
+│   │   └── App.css
+│   ├── package.json
+│   └── README.md
+│
+├── reports/
+│   ├── analysis/             # 지역별 통계 및 격차 분석
+│   ├── audit/                # 데이터 품질 검증
+│   ├── collection_volume/    # 수거량 분석
+│   ├── spatial/              # 공간 분석
+│   └── figures/              # 분석 결과 이미지
+│
+├── src/
+│   ├── 01_audit.py
+│   ├── 02_preprocess.py
+│   ├── 03_validate.py
+│   ├── 04_analyze.py
+│   ├── 05_visualize.py
+│   ├── 06_spatial.py
+│   ├── 07_population_flow.py
+│   ├── 08_collection_volume.py
+│   ├── 09_prepare_web_data.py
+│   ├── 10_geocode_yangcheon.py
+│   ├── 11_verify_yangcheon.py
+│   ├── 12_merge_yangcheon.py
+│   ├── 13_validate_geocoded.py
+│   └── 14_reanalyze_spatial.py
+│
+└── README.md
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## 6. 실행 방법
+
+### 6.1 프로젝트 다운로드
+
+Git이 설치된 Windows 환경에서 실행합니다.
+
+```powershell
+git clone https://github.com/yuna830/medicine-map.git
+cd medicine-map
+```
+
+이미 프로젝트가 있다면 해당 폴더를 열면 됩니다.
+
+### 6.2 프론트엔드 설치
+
+Node.js 및 npm이 설치되어 있어야 합니다.
+
+```powershell
+cd frontend
+npm install
+```
+
+### 6.3 Kakao Maps API 설정
+
+`frontend` 폴더에 `.env.local` 파일을 생성합니다.
+
+```env
+VITE_KAKAO_MAP_KEY=YOUR_KAKAO_JAVASCRIPT_KEY
+```
+
+`YOUR_KAKAO_JAVASCRIPT_KEY`를 본인의 Kakao Maps JavaScript 키로 변경합니다.
+
+카카오 개발자 콘솔에서 사용하는 웹사이트 주소가 허용된 도메인으로 등록되어 있어야 합니다.
+
+로컬 개발 시에는 사용하는 포트에 맞는 주소를 등록합니다.
+
+예시:
+
+```text
+http://localhost:5173
+```
+
+`.env.local`은 GitHub에 업로드하지 않습니다.
+
+### 6.4 개발 서버 실행
+
+```powershell
+npm run dev
+```
+
+브라우저에서 터미널에 표시된 로컬 주소로 접속합니다.
+
+일반적인 기본 주소는 다음과 같습니다.
+
+```text
+http://localhost:5173
+```
+
+### 6.5 빌드
+
+```powershell
+npm run build
+```
+
+빌드 결과는 `frontend/dist`에 생성됩니다.
+
+빌드된 화면을 미리 확인하려면 다음 명령어를 사용합니다.
+
+```powershell
+npm run preview
+```
+
+## 7. 데이터 분석 방법
+
+### 7.1 전체 인구 대비 시설 기록 비율
+
+```text
+전체 인구 1만 명당 시설 기록 수
+= 시설 기록 수 / 전체 주민등록인구 × 10,000
+```
+
+### 7.2 고령인구 대비 시설 기록 비율
+
+```text
+고령인구 1만 명당 시설 기록 수
+= 시설 기록 수 / 65세 이상 주민등록인구 × 10,000
+```
+
+### 7.3 평균 최근접 시설 간 거리
+
+각 수거시설에서 가장 가까운 다른 수록 시설까지의 직선거리를 계산하고 평균을 구합니다.
+
+해당 지표는 시설 간 분포 간격을 나타냅니다.
+
+주민의 거주지에서 시설까지의 거리 또는 실제 도보·차량 이동거리를 의미하지 않습니다.
+
+### 7.4 Pearson 상관계수
+
+```text
+r = Σ[(x - x평균)(y - y평균)]
+    / √(Σ(x - x평균)² × Σ(y - y평균)²)
+```
+
+- x: 자치구별 65세 이상 인구 수
+- y: 자치구별 시설 기록 수
+
+상관계수는 선형 관계를 나타내며 인과관계를 의미하지 않습니다.
+
+### 7.5 월별 수거 처리량
+
+2024년 자치구별 월별 원본값을 사용합니다.
+
+- 월별 합계
+- 연간 합계
+- 월평균
+- 표준편차
+- 변동계수
+
+현재 사용한 2024년 자료의 공식 측정 단위는 별도 확인이 필요하므로, 분석 결과에서는 원자료 수치로 표시합니다.
+
+## 8. 주요 분석 결과
+
+| 지표 | 결과 |
+|---|---|
+| 분석 시설 기록 | 233건 |
+| 전체 인구 1만 명당 시설 기록 수 | 0.654건 |
+| 고령인구 1만 명당 시설 기록 수 | 3.239건 |
+| 전체 시설의 평균 최근접 직선거리 | 약 458m |
+| 전체 인구 대비 지역 간 최고·최저 비율 | 약 16.1배 |
+| 고령인구와 시설 기록 수의 Pearson r | 약 -0.333 |
+
+0.654건과 3.239건은 분석 대상 전체 시설 기록 수를 해당 인구 합계로 나눈 값입니다. 자치구별 비율의 단순평균과는 구분됩니다.
+
+Pearson r = -0.333은 분석 대상 9개 구에서 나타난 약한 음의 선형 관계입니다.
+
+## 9. 데이터 출처
+
+본 프로젝트는 공공데이터를 활용했습니다.
+
+### 사용 자료
+
+1. 서울특별시 자치구별 폐의약품 수거함 관련 공개자료
+2. 서울시 등록인구(연령별·동별)
+3. 서울시 상권분석서비스(길단위인구-자치구)
+4. 자치구별 폐의약품 수거 처리량(2024년)
+
+### 참고 데이터 페이지
+
+- [서울 열린데이터광장](https://data.seoul.go.kr/)
+- [공공데이터포털](https://www.data.go.kr/)
+
+수거시설 원본 자료의 상세 출처는 자치구별로 다릅니다. 개별 원본 URL은 추가 검증 후 기록해야 합니다.
+
+2024년 폐의약품 수거 처리량은 정확한 원본 게시 페이지와 공식 측정 단위를 추가 확인해야 합니다.
+
+## 10. 데이터 처리 및 재현
+
+Python 분석 스크립트는 프로젝트 루트의 `src` 폴더에 있습니다.
+
+스크립트는 데이터 품질 점검, 전처리, 분석, 좌표 검증 및 웹사이트용 JSON 생성을 위해 사용합니다.
+
+기존 결과 파일은 `data`와 `reports` 폴더에 보관되어 있습니다.
+
+웹사이트는 다음 JSON 파일을 사용합니다.
+
+```text
+frontend/public/data/facilities.json
+frontend/public/data/districts.json
+frontend/public/data/collection_monthly.json
+frontend/public/data/metadata.json
+frontend/public/data/spatial_analysis.json
+```
+
+분석 데이터를 다시 생성할 때는 원본 데이터의 파일명, 형식 및 선행 처리 결과가 스크립트의 요구사항과 일치해야 합니다.
+
+특히 좌표 보완 과정은 별도의 검증 결과를 사용하므로, 전체 Python 스크립트를 무조건 처음부터 순차 실행하기보다 각 스크립트의 입력 파일과 의존성을 확인해야 합니다.
+
+`data/web`의 분석 결과를 갱신한 경우 실제 웹에서 사용하는 `frontend/public/data`에도 변경된 JSON을 반영해야 합니다.
+
+## 11. 데이터 해석 시 유의사항
+
+- 분석 범위는 서울시 전체 25개 구가 아닌 9개 구입니다.
+- 시설 기록의 기준일은 자치구마다 다릅니다.
+- 수거시설 233건의 현재 운영 여부는 확인되지 않았습니다.
+- 양천구의 일부 좌표는 2020년 공개 자료의 주소를 기반으로 보완했습니다.
+- 동일한 위치 좌표를 사용하는 시설 기록이 존재할 수 있습니다.
+- 시설 간 최근접 직선거리는 실제 주민 접근성과 다릅니다.
+- 월별 처리량과 시설 자료는 기준연도가 다릅니다.
+- 고령인구와 시설 기록 수의 상관관계는 인과관계를 나타내지 않습니다.
+- 자료 기준일 필터는 시설 목록과 지도에 적용되며, 상단 요약 및 통계 그래프는 전체 분석 원자료를 기준으로 표시합니다.
+
+## 12. 프로젝트 활용
+
+본 프로젝트는 공공데이터를 활용한 지역별 수거 인프라 분포 비교 사례입니다.
+
+자치구별 시설 분포와 인구 대비 시설 기록 비율을 함께 살펴봄으로써 지역별 수거 인프라 조사의 기초 참고자료로 활용할 수 있습니다.
+
+다만 실제 시설 운영 여부, 주민 이동거리 및 미수록 자치구의 시설 현황을 추가로 확인해야 서울시 전체의 접근성을 평가할 수 있습니다.
